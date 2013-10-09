@@ -11,3 +11,4 @@ set cul
 hi CursorLine term=none cterm=none ctermbg=0
 set autoindent smartindent
 set nocompatible
+set scrolloff=5               " keep at least 5 lines above/below
