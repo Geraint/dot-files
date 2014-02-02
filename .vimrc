@@ -12,3 +12,8 @@ hi CursorLine term=none cterm=none ctermbg=0
 set autoindent smartindent
 set nocompatible
 set scrolloff=5               " keep at least 5 lines above/below
+
+" List all possible buffers with "gb" and accept a new buffer argument
+" see http://reefpoints.dockyard.com/2013/10/22/vim-buffers.html
+nnoremap gb :ls<CR>:b
+
