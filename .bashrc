@@ -19,6 +19,9 @@ else
     alias vimg='vim -u ~/.vimgrc'
 fi 
 
+# See http://www.reddit.com/r/vim/comments/1u0ro6/i_had_no_idea_vishortcuts_existed_in_bash/
+set -o vi
+
 # Allow overriding
 if [ -f "${HOME}/.bash_local" ]; then
   source "${HOME}/.bash_local"
