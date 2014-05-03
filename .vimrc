@@ -3,6 +3,8 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 
+set history=200
+
 set number
 set background=dark
 colorscheme ir_black
