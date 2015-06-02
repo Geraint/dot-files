@@ -1,3 +1,4 @@
+
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -28,8 +29,13 @@ nnoremap gb :ls<CR>:b
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " Show invisible whitespace by default
 set list
+
+" My Leader
+let mapleader = "\<Space>"
+
 " Shortcut to rapidly togget `set list`
 nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¶,trail:·
 
+execute pathogen#infect()
