@@ -39,7 +39,7 @@ nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¶,trail:·
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" copy and paste to system clipboard with leader-y and leader-y
+" copy and paste to system clipboard with leader-y and leader-P/p
 " see http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 vmap <Leader>y "+y
