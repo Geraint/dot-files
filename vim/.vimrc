@@ -38,3 +38,14 @@ nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¶,trail:·
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" copy and paste to system keyboard with leader-y and leader-y
+" see http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
