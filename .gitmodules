@@ -1,3 +1,6 @@
 [submodule "vim/.vim/bundle/surround"]
 	path = vim/.vim/bundle/surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule "vim/.vim/bundle/exchange"]
+	path = vim/.vim/bundle/exchange
+	url = https://github.com/tommcdo/vim-exchange.git
