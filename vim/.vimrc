@@ -18,6 +18,7 @@ hi CursorLine term=none cterm=bold ctermbg=none
 set autoindent smartindent
 set nocompatible
 set scrolloff=5               " keep at least 5 lines above/below
+set incsearch
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " List all possible buffers with "gb" and accept a new buffer argument
