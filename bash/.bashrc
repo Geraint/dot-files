@@ -10,7 +10,7 @@ fi
 if  [ "$(id -u)" != "0" ]; then
     # become root, but with my .bashrc
     alias sup='sudo bash --rcfile ~/.bashrc'
-    alias level-up='git -C ~/dot-files pull; git -C ~/dot-files submodule update --init'
+    alias level-up='sh -c "cd ~/dot-files; git pull; git submodule update --init"'
     # user prompt
     PS1='\[\e[1;32m\]\u@\h \[\e[1;34m\]\w \$\[\e[0m\] '
 else
