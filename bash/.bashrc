@@ -8,14 +8,15 @@ fi
 # User specific aliases and functions
 
 if  [ "$(id -u)" != "0" ]; then
+    # green user prompt
+    PS1='\[\e[1;32m\]\u@\h \[\e[1;34m\]\w \$\[\e[0m\] '
+    alias ll='ls -alF'
     # become root, but with my .bashrc
     alias sup='sudo bash --rcfile ~/.bashrc'
     alias level-up='sh -c "cd ~/dot-files; git pull; git submodule update --init"'
-    # user prompt
-    PS1='\[\e[1;32m\]\u@\h \[\e[1;34m\]\w \$\[\e[0m\] '
 else
     source "/root/.bashrc"
-    # root prompt
+    # red (root) prompt
     PS1='\[\e[1;31m\][\u@\h \W]\$\[\e[0m\] '
 fi 
 
