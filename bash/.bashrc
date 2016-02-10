@@ -10,7 +10,6 @@ fi
 if  [ "$(id -u)" != "0" ]; then
     # green user prompt
     PS1='\[\e[1;32m\]\u@\h \[\e[1;34m\]\w \$\[\e[0m\] '
-    alias ll='ls -alF'
     # become root, but with my .bashrc
     alias sup='sudo bash --rcfile ~/.bashrc'
     alias level-up='sh -c "cd ~/dot-files; git pull; git submodule update --init"'
@@ -19,6 +18,9 @@ else
     # red (root) prompt
     PS1='\[\e[1;31m\][\u@\h \W]\$\[\e[0m\] '
 fi 
+
+# Common (normal *and* root) aliases
+alias ll='ls -alF'
 
 if [ -f "${HOME}/.bash_aliases" ]; then
   source "${HOME}/.bash_aliases"
