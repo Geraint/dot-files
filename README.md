@@ -7,3 +7,4 @@ Just where I'm going to keep my dot files.
 
     git submodule add https://github.com/leafgarland/typescript-vim.git vim/.vim/bundle/typescript-vim
 
+Use `stow` to install this
