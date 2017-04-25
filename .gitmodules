@@ -4,3 +4,6 @@
 [submodule "vim/.vim/bundle/exchange"]
 	path = vim/.vim/bundle/exchange
 	url = https://github.com/tommcdo/vim-exchange.git
+[submodule "vim/.vim/bundle/typescript-vim"]
+	path = vim/.vim/bundle/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
