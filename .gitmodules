@@ -7,3 +7,6 @@
 [submodule "vim/.vim/bundle/typescript-vim"]
 	path = vim/.vim/bundle/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
+[submodule "nvim/.config/nvim/pack/minpac/opt/minpac"]
+	path = nvim/.config/nvim/pack/minpac/opt/minpac
+	url = https://github.com/k-takata/minpac
