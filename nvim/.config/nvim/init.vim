@@ -2,7 +2,7 @@
 """ BASIC INFO
 """"""""""""""""""
 "
-" Maintainer: AffanIndo
+" Maintainer: github.com/Geraint
 "
 " Sections:
 "    -> FIRST THING FIRST
@@ -49,10 +49,11 @@ call minpac#add('Shougo/deoplete.nvim', { 'do': 'UpdateRemotePlugins' })
 call minpac#add('arcticicestudio/nord-vim')
 call minpac#add('autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': '!bash install.sh' })
 call minpac#add('joonty/vim-phpunitqf')
-call minpac#add('junegunn/fzf', { 'do': './install --all' })
+call minpac#add('junegunn/fzf', { 'do': '!./install --all' })
 call minpac#add('junegunn/fzf.vim')
 call minpac#add('lumiliet/vim-twig')
 call minpac#add('roxma/LanguageServer-php-neovim', {'do': '!composer install && composer run-script parse-stubs'})
+call minpac#add('tpope/vim-fugitive')
 call minpac#add('tpope/vim-projectionist')
 call minpac#add('tpope/vim-unimpaired')
 call minpac#add('vim-airline/vim-airline')
