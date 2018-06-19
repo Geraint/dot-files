@@ -43,7 +43,9 @@ nnoremap <leader>N :bprev<cr> " Previous buffer
 packadd minpac
 call minpac#init()
 
-call minpac#add('k-takata/minpac', {'type': 'opt'})
+" this errors, so we'll update minpac using `git submodule update --init`
+" instead
+"call minpac#add('k-takata/minpac', {'type': 'opt'})
 
 call minpac#add('Shougo/deoplete.nvim', { 'do': 'UpdateRemotePlugins' })
 call minpac#add('arcticicestudio/nord-vim')
