@@ -36,6 +36,7 @@ let mapleader = "\<Space>"
 
 nnoremap <leader>n :bnext<cr> " Next buffer
 nnoremap <leader>N :bprev<cr> " Previous buffer
+nnoremap <leader>l :set list!<CR>
 
 """"""""""""""
 """ PLUGIN
@@ -101,6 +102,15 @@ set cursorline
 """ GENERAL
 """""""""""""""
 set number
+
+" tabs
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent smartindent
+
+set listchars=tab:▸\ ,eol:¶,trail:·
 
 """""""""""
 """ MAP
