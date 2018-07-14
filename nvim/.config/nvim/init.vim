@@ -58,6 +58,7 @@ call minpac#init()
 "call minpac#add('k-takata/minpac', {'type': 'opt'})
 
 call minpac#add('Shougo/deoplete.nvim', { 'do': 'UpdateRemotePlugins' })
+call minpac#add('airblade/vim-gitgutter')
 call minpac#add('arcticicestudio/nord-vim')
 call minpac#add('autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': '!bash install.sh' })
 call minpac#add('joonty/vim-phpunitqf')
