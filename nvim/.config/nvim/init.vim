@@ -125,6 +125,9 @@ set foldcolumn=1
 
 set listchars=tab:▸\ ,eol:¶,trail:·
 
+" make vim-gitgutter more responsive
+set updatetime=100
+
 """""""""""
 """ MAP
 """""""""""
