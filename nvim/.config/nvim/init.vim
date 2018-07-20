@@ -115,19 +115,23 @@ set cursorline
 set number
 
 " tabs
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
-set autoindent smartindent
-
-" Add a bit extra margin to the left beside line number
-set foldcolumn=1
+set autoindent      " set the cursor at same indent as line above
+set expandtab       " expand <Tab>s with spaces; death to tabs!
+set shiftwidth=4    " number of spaces to use for each step of (auto)indent.
+set softtabstop=4   " set virtual tab stop (compat for 8-wide tabs)
+set tabstop=4       " for proper display of files with tabs
 
 set listchars=tab:▸\ ,eol:¶,trail:·
 
 " make vim-gitgutter more responsive
 set updatetime=100
+
+"""""""""""
+""" Filetypes
+"""""""""""
+
+" Ruby
+autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
 """""""""""
 """ MAP
