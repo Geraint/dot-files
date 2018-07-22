@@ -58,6 +58,7 @@ call minpac#init()
 "call minpac#add('k-takata/minpac', {'type': 'opt'})
 
 call minpac#add('Shougo/deoplete.nvim', { 'do': 'UpdateRemotePlugins' })
+call minpac#add('SirVer/ultisnips')
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('arcticicestudio/nord-vim')
 call minpac#add('autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': '!bash install.sh' })
@@ -66,11 +67,13 @@ call minpac#add('joonty/vim-phpunitqf')
 call minpac#add('junegunn/fzf', { 'do': '!./install --all' })
 call minpac#add('junegunn/fzf.vim')
 call minpac#add('lumiliet/vim-twig')
+call minpac#add('majutsushi/tagbar')
 call minpac#add('roxma/LanguageServer-php-neovim', {'do': '!composer install && composer run-script parse-stubs'})
 call minpac#add('tpope/vim-fugitive')
 call minpac#add('tpope/vim-projectionist')
 call minpac#add('tpope/vim-unimpaired')
 call minpac#add('vim-airline/vim-airline')
+call minpac#add('vim-php/tagbar-phpctags.vim')
 
 
 " Minpac
@@ -100,6 +103,12 @@ nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 let g:deoplete#enable_at_startup = 1
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<tab>"
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger = "<C-j>"
+
+" Tagbar
+nnoremap <C-b> :TagbarToggle<CR>
 
 """""""""""""
 """ COLOR
