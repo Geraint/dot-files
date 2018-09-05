@@ -129,6 +129,7 @@ set number
 
 " tabs
 set autoindent      " set the cursor at same indent as line above
+set cursorcolumn
 set expandtab       " expand <Tab>s with spaces; death to tabs!
 set shiftwidth=4    " number of spaces to use for each step of (auto)indent.
 set softtabstop=4   " set virtual tab stop (compat for 8-wide tabs)
