@@ -86,6 +86,9 @@ command! PackClean call minpac#clean()
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
+" Fugitive
+let g:merginal_windowWidth = 65
+
 " FZF
 nnoremap <C-p> :<C-u>Files<CR>
 nnoremap <C-o> :Buffers<CR>
