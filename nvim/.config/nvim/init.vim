@@ -25,6 +25,7 @@ set nowrap
 set encoding=utf-8
 
 " Plugins essential
+set nocompatible
 syntax on
 filetype plugin indent on
 
@@ -76,6 +77,7 @@ call minpac#add('tpope/vim-projectionist')
 call minpac#add('tpope/vim-unimpaired')
 call minpac#add('vim-airline/vim-airline')
 call minpac#add('vim-php/tagbar-phpctags.vim')
+call minpac#add('vimwiki/vimwiki')
 
 
 " Minpac
@@ -113,6 +115,13 @@ let g:UltiSnipsExpandTrigger = "<C-j>"
 
 " Tagbar
 nnoremap <C-b> :TagbarToggle<CR>
+
+" VimWiki
+let g:vimwiki_list = [
+\   { 'path': '~/notes/crucial-conversations/', 'syntax': 'markdown', 'ext': '.md' },
+\   { 'path': '~/notes/vim-notes', 'syntax': 'markdown', 'ext': '.md' },
+\]
+nnoremap <leader>x :VimwikiToggleListItem<cr> " default <c-space> doesn't work for some reason
 
 """""""""""""
 """ COLOR
