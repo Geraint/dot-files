@@ -121,10 +121,9 @@ nnoremap <C-b> :TagbarToggle<CR>
 
 " VimWiki
 let g:vimwiki_list = [
-\   { 'path': '~/wiki/book-notes/', 'syntax': 'markdown', 'ext': '.md' },
 \   { 'path': '~/wiki/private/', 'syntax': 'markdown', 'ext': '.md' },
+\   { 'path': '~/wiki/book-notes/', 'syntax': 'markdown', 'ext': '.md' },
 \   { 'path': '~/wiki/tech-notes', 'syntax': 'markdown', 'ext': '.md' },
-\   { 'path': '~/wiki/vim-notes', 'syntax': 'markdown', 'ext': '.md' },
 \]
 nnoremap <leader>x :VimwikiToggleListItem<cr> " default <c-space> doesn't work for some reason
 
