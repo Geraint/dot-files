@@ -63,14 +63,13 @@ call minpac#add('Shougo/deoplete.nvim', { 'do': 'UpdateRemotePlugins' })
 call minpac#add('SirVer/ultisnips')
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('arcticicestudio/nord-vim')
-call minpac#add('autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': '!bash install.sh' })
 call minpac#add('idanarye/vim-merginal')
 call minpac#add('junegunn/fzf', { 'do': '!./install --all' })
 call minpac#add('junegunn/fzf.vim')
 call minpac#add('lumiliet/vim-twig')
 call minpac#add('majutsushi/tagbar')
+call minpac#add('mustache/vim-mustache-handlebars')
 call minpac#add('radenling/vim-dispatch-neovim')
-call minpac#add('roxma/LanguageServer-php-neovim', {'do': '!composer install && composer run-script parse-stubs'})
 call minpac#add('tpope/vim-dispatch')
 call minpac#add('tpope/vim-fugitive')
 call minpac#add('tpope/vim-projectionist')
@@ -98,15 +97,6 @@ nnoremap <C-o> :Buffers<CR>
 " PHPUnit
 let g:phpunit_cmd = "./vendor/bin/phpunit"
 let g:phpunit_args = "--no-coverage"
-
-" LanguageClient-neovim
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-" Or map each action separately
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-" dont use quickfix list
-let  g:LanguageClient_diagnosticsList = ''
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
