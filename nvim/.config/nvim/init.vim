@@ -64,6 +64,7 @@ call minpac#add('SirVer/ultisnips')
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('arcticicestudio/nord-vim')
 call minpac#add('idanarye/vim-merginal')
+call minpac#add('jremmen/vim-ripgrep')
 call minpac#add('junegunn/fzf', { 'do': '!./install --all' })
 call minpac#add('junegunn/fzf.vim')
 call minpac#add('lumiliet/vim-twig')
@@ -94,9 +95,8 @@ let g:merginal_windowWidth = 65
 nnoremap <C-p> :<C-u>Files<CR>
 nnoremap <C-o> :Buffers<CR>
 
-" PHPUnit
-let g:phpunit_cmd = "./vendor/bin/phpunit"
-let g:phpunit_args = "--no-coverage"
+" Ripgrep
+let g:rg_highlight = 1
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
