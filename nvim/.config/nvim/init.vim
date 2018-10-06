@@ -78,6 +78,7 @@ call minpac#add('tpope/vim-unimpaired')
 call minpac#add('vim-airline/vim-airline')
 call minpac#add('vim-php/tagbar-phpctags.vim')
 call minpac#add('vimwiki/vimwiki')
+call minpac#add('w0rp/ale')
 
 
 " Minpac
@@ -87,6 +88,13 @@ command! PackClean call minpac#clean()
 " Airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+
+" Ale
+let g:ale_linters = {
+\   'php': ['php'],
+\}
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 0
 
 " Fugitive
 let g:merginal_windowWidth = 65
