@@ -68,6 +68,7 @@ call minpac#add('jremmen/vim-ripgrep')
 call minpac#add('junegunn/fzf', { 'do': '!./install --all' })
 call minpac#add('junegunn/fzf.vim')
 call minpac#add('lumiliet/vim-twig')
+call minpac#add('lvht/phpcd.vim', { 'do': '!composer install' })
 call minpac#add('majutsushi/tagbar')
 call minpac#add('mustache/vim-mustache-handlebars')
 call minpac#add('radenling/vim-dispatch-neovim')
@@ -96,6 +97,13 @@ let g:ale_linters = {
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
 
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<tab>"
+let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
+let g:deoplete#ignore_sources.php = ['omni']
+
 " Fugitive
 let g:merginal_windowWidth = 65
 
@@ -106,16 +114,11 @@ nnoremap <C-o> :Buffers<CR>
 " Ripgrep
 let g:rg_highlight = 1
 
-" Deoplete
-let g:deoplete#enable_at_startup = 1
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<tab>"
+" Tagbar
+nnoremap <C-b> :TagbarToggle<CR>
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger = "<C-j>"
-
-" Tagbar
-nnoremap <C-b> :TagbarToggle<CR>
 
 " VimWiki
 let g:vimwiki_list = [
