@@ -67,9 +67,11 @@ call minpac#add('idanarye/vim-merginal')
 call minpac#add('jremmen/vim-ripgrep')
 call minpac#add('junegunn/fzf', { 'do': '!./install --all' })
 call minpac#add('junegunn/fzf.vim')
+call minpac#add('kristijanhusak/deoplete-phpactor')
 call minpac#add('lumiliet/vim-twig')
 call minpac#add('majutsushi/tagbar')
 call minpac#add('mustache/vim-mustache-handlebars')
+call minpac#add('phpactor/phpactor', { 'do': '!composer install' })
 call minpac#add('radenling/vim-dispatch-neovim')
 call minpac#add('tpope/vim-dispatch')
 call minpac#add('tpope/vim-fugitive')
@@ -103,7 +105,7 @@ inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<tab>"
 let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
 let g:deoplete#ignore_sources.php = ['omni']
 
-" Fugitive
+" Fugitive/Merginal
 let g:merginal_windowWidth = 65
 
 " FZF
