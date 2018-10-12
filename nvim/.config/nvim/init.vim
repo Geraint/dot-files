@@ -68,7 +68,6 @@ call minpac#add('jremmen/vim-ripgrep')
 call minpac#add('junegunn/fzf', { 'do': '!./install --all' })
 call minpac#add('junegunn/fzf.vim')
 call minpac#add('lumiliet/vim-twig')
-call minpac#add('lvht/phpcd.vim', { 'do': '!composer install' })
 call minpac#add('majutsushi/tagbar')
 call minpac#add('mustache/vim-mustache-handlebars')
 call minpac#add('radenling/vim-dispatch-neovim')
@@ -158,9 +157,6 @@ set updatetime=100
 """""""""""
 """ Filetypes
 """""""""""
-
-" Ruby
-autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
 """""""""""
 """ MAP
