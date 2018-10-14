@@ -57,6 +57,7 @@ call minpac#add('jremmen/vim-ripgrep')
 call minpac#add('junegunn/fzf', { 'do': '!./install --all' })
 call minpac#add('junegunn/fzf.vim')
 call minpac#add('lumiliet/vim-twig')
+call minpac#add('lvht/phpcd.vim', { 'do': '!composer install' })
 call minpac#add('majutsushi/tagbar')
 call minpac#add('mustache/vim-mustache-handlebars')
 call minpac#add('radenling/vim-dispatch-neovim')
@@ -90,7 +91,7 @@ let g:deoplete#enable_at_startup = 1
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<tab>"
 let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
-let g:deoplete#ignore_sources.php = ['omni']
+let g:deoplete#ignore_sources.php = ['omni', 'LanguageClient']
 
 " Fugitive/Merginal
 let g:merginal_windowWidth = 65
