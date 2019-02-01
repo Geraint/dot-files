@@ -1,7 +1,11 @@
 snippet getter
-public function get$1() : $2
+
+/** @var $1 */
+private \$$2;
+
+public function get$3() : $1
 {
-    return $this->$3;
+    return $this->$2;
 }
 $0
 endsnippet
