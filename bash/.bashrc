@@ -2,7 +2,7 @@
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+    . /etc/bashrc
 fi
 
 # User specific aliases and functions
@@ -17,7 +17,7 @@ else
     source "/root/.bashrc"
     # red (root) prompt
     PS1='\[\e[1;31m\][\u@\h \W]\$\[\e[0m\] '
-fi 
+fi
 
 # Common (normal *and* root) aliases
 alias ll='ls -alF'
@@ -33,4 +33,3 @@ set -o vi
 if [ -f "${HOME}/.bash_local" ]; then
   source "${HOME}/.bash_local"
 fi
-
