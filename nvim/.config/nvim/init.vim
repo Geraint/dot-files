@@ -61,6 +61,7 @@ call minpac#add('lvht/phpcd.vim', { 'do': '!composer install' })
 call minpac#add('majutsushi/tagbar')
 call minpac#add('mustache/vim-mustache-handlebars')
 call minpac#add('radenling/vim-dispatch-neovim')
+call minpac#add('rakr/vim-one')
 call minpac#add('tmux-plugins/vim-tmux-focus-events')
 call minpac#add('tpope/vim-dispatch')
 call minpac#add('tpope/vim-fugitive')
@@ -79,6 +80,7 @@ command! PackClean call minpac#clean()
 " Airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='one'
 
 " Ale
 let g:ale_linters = {
@@ -129,7 +131,12 @@ nnoremap <leader>x :VimwikiToggleListItem<cr> " default <c-space> doesn't work f
 """""""""""""
 
 set background=dark
-colorscheme nord
+set termguicolors
+
+"colorscheme nord
+
+let g:one_allow_italics = 1
+colorscheme one
 
 """""""""""""""
 """ GENERAL
