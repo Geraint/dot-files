@@ -80,7 +80,7 @@ command! PackClean call minpac#clean()
 " Airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='one'
+" For theme, see COLOUR section below
 
 " Ale
 let g:ale_linters = {
@@ -127,16 +127,25 @@ let g:vimwiki_list = [
 nnoremap <leader>x :VimwikiToggleListItem<cr> " default <c-space> doesn't work for some reason
 
 """""""""""""
-""" COLOR
+""" COLOUR
 """""""""""""
 
 set background=dark
 set termguicolors
 
+" Nord - https://github.com/arcticicestudio/nord-vim
+let g:nord_italic = 1
+let g:nord_underline = 1
+let g:nord_italic_comments = 1
+let g:nord_cursor_line_number_background = 1
+let g:nord_comment_brightness = 15
 "colorscheme nord
+"let g:airline_theme='nord'
 
+" Vim One
 let g:one_allow_italics = 1
 colorscheme one
+let g:airline_theme='one'
 
 """""""""""""""
 """ GENERAL
