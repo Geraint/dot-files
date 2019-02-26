@@ -6,6 +6,7 @@ if (has("termguicolors"))
 endif
 
 set background=dark
+set cmdheight=2
 "set incsearch
 set hlsearch
 set list " Show invisible whitespace by default

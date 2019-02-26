@@ -52,6 +52,7 @@ call minpac#add('SirVer/ultisnips')
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('arcticicestudio/nord-vim')
 call minpac#add('autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': '!bash install.sh' })
+call minpac#add('christoomey/vim-tmux-navigator')
 call minpac#add('idanarye/vim-merginal')
 call minpac#add('jremmen/vim-ripgrep')
 call minpac#add('junegunn/fzf', { 'do': '!./install --all' })
@@ -164,7 +165,7 @@ set cursorline
 set listchars=tab:▸\ ,eol:¶,trail:·
 set number
 set undofile        " persistent undo
-set updatetime=100  " make vim-gitgutter more responsive
+set updatetime=500  " make vim-gitgutter more responsive
 
 """""""""""
 """ Filetypes
