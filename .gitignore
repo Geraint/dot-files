@@ -2,3 +2,5 @@
 nvim/.config/nvim/.netrwhist
 nvim/.config/nvim/pack/minpac/
 vim/.vim/.netrwhist
+vim/.vim/autoload/
+vim/.vim/plugged/
