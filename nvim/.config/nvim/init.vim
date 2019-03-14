@@ -35,97 +35,7 @@ filetype plugin indent on
 "
 let mapleader = "\<Space>"
 
-""""""""""""""
-""" PLUGIN
-""""""""""""""
-packadd minpac
-call minpac#init()
-
-" this errors, so we'll update minpac using `git submodule update --init`
-" instead
-"call minpac#add('k-takata/minpac', {'type': 'opt'})
-
-call minpac#add('Geraint/vim-phpunit')
-call minpac#add('Shougo/deoplete.nvim', { 'do': 'UpdateRemotePlugins' })
-call minpac#add('Shougo/echodoc.vim')
-call minpac#add('SirVer/ultisnips')
-call minpac#add('airblade/vim-gitgutter')
-call minpac#add('arcticicestudio/nord-vim')
-call minpac#add('autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': '!bash install.sh' })
-call minpac#add('christoomey/vim-tmux-navigator')
-call minpac#add('idanarye/vim-merginal')
-call minpac#add('jremmen/vim-ripgrep')
-call minpac#add('junegunn/fzf', { 'do': '!./install --all' })
-call minpac#add('junegunn/fzf.vim')
-call minpac#add('lumiliet/vim-twig')
-call minpac#add('lvht/phpcd.vim', { 'do': '!composer install' })
-call minpac#add('majutsushi/tagbar')
-call minpac#add('mustache/vim-mustache-handlebars')
-call minpac#add('radenling/vim-dispatch-neovim')
-call minpac#add('rakr/vim-one')
-call minpac#add('tmux-plugins/vim-tmux-focus-events')
-call minpac#add('tpope/vim-dispatch')
-call minpac#add('tpope/vim-fugitive')
-call minpac#add('tpope/vim-projectionist')
-call minpac#add('tpope/vim-unimpaired')
-call minpac#add('vim-airline/vim-airline')
-call minpac#add('vim-php/tagbar-phpctags.vim')
-call minpac#add('vimwiki/vimwiki')
-call minpac#add('w0rp/ale')
-
-
-" Minpac
-command! PackUpdate call minpac#update()
-command! PackClean call minpac#clean()
-
-" Airline
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-" For theme, see COLOUR section below
-
-" Ale
-let g:ale_linters = {
-\   'php': ['php'],
-\}
-let g:ale_lint_on_save = 1
-let g:ale_lint_on_text_changed = 0
-
-" Deoplete
-let g:deoplete#enable_at_startup = 1
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<tab>"
-let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
-let g:deoplete#ignore_sources.php = ['omni', 'LanguageClient']
-
-" Fugitive/Merginal
-let g:merginal_windowWidth = 65
-
-" FZF
-nnoremap <C-p> :<C-u>Files<CR>
-nnoremap <C-o> :Buffers<CR>
-
-" Language Client
-let g:LanguageClient_serverCommands = {
-    \ 'php': ['tcp://127.0.0.1:2088'],
-\ }
-nnoremap <leader>lc :call LanguageClient_contextMenu()<cr>
-
-" Ripgrep
-let g:rg_highlight = 1
-
-" Tagbar
-nnoremap <C-b> :TagbarToggle<CR>
-
-" UltiSnips
-let g:UltiSnipsExpandTrigger = "<C-j>"
-
-" VimWiki
-let g:vimwiki_list = [
-\   { 'path': '~/wiki/private/', 'syntax': 'markdown', 'ext': '.md' },
-\   { 'path': '~/wiki/book-notes/', 'syntax': 'markdown', 'ext': '.md' },
-\   { 'path': '~/wiki/tech-notes', 'syntax': 'markdown', 'ext': '.md' },
-\]
-nnoremap <leader>x :VimwikiToggleListItem<cr> " default <c-space> doesn't work for some reason
+source $HOME/.config/nvim/_plugins.vim
 
 """""""""""""
 """ COLOUR
@@ -134,19 +44,6 @@ nnoremap <leader>x :VimwikiToggleListItem<cr> " default <c-space> doesn't work f
 set background=dark
 set termguicolors
 
-" Nord - https://github.com/arcticicestudio/nord-vim
-let g:nord_italic = 1
-let g:nord_underline = 1
-let g:nord_italic_comments = 1
-let g:nord_cursor_line_number_background = 1
-let g:nord_comment_brightness = 15
-"colorscheme nord
-"let g:airline_theme='nord'
-
-" Vim One
-let g:one_allow_italics = 1
-colorscheme one
-let g:airline_theme='one'
 
 """""""""""""""
 """ GENERAL
