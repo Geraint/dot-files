@@ -7,19 +7,17 @@ let mapleader = "\<Space>"
 " nnoremap -> map normal
 " inoremap -> map insert
 
-" List all possible buffers with "gb" and accept a new buffer argument
-" see http://reefpoints.dockyard.com/2013/10/22/vim-buffers.html
-nnoremap gb :ls<CR>:b
+nnoremap <leader>n :bnext<cr> " Next buffer
+nnoremap <leader>N :bprev<cr> " Previous buffer
 
 " Shortcut to rapidly toggle `set list`
-nmap <leader>l :set list!<CR>
+nnoremap <leader>l :set list!<CR>
 
 " copy and paste to system clipboard with leader-y and leader-P/p
 " see http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
-vmap <Leader>y "+y
-vmap <Leader>d "+d
-nmap <Leader>p "+p
-nmap <Leader>P "+P
-vmap <Leader>p "+p
-vmap <Leader>P "+P
-
+vnoremap <Leader>y "+y
+vnoremap <Leader>d "+d
+nnoremap <Leader>p "+p
+nnoremap <Leader>P "+P
+vnoremap <Leader>p "+p
+vnoremap <Leader>P "+P
