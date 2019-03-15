@@ -28,6 +28,7 @@ Plug 'lumiliet/vim-twig'
 Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 Plug 'majutsushi/tagbar'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'nanotech/jellybeans.vim'
 Plug 'radenling/vim-dispatch-neovim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tpope/vim-dispatch'
