@@ -14,10 +14,12 @@ Plug 'idanarye/vim-merginal'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'nanotech/jellybeans.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
@@ -31,6 +33,9 @@ nnoremap <C-o> :Buffers<CR>
 
 " OneDark
 let g:onedark_terminal_italics=1
-colorscheme onedark
-let g:airline_theme='onedark'
+"colorscheme onedark
+"let g:airline_theme='onedark'
 
+" JellyBeans¶
+colorscheme jellybeans
+let g:airline_theme='jellybeans'

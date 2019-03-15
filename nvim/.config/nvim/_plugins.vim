@@ -32,10 +32,12 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'radenling/vim-dispatch-neovim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-php/tagbar-phpctags.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'w0rp/ale'
@@ -112,5 +114,9 @@ let g:nord_comment_brightness = 15
 " OneDark
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let g:onedark_terminal_italics=1
-colorscheme onedark
-let g:airline_theme='onedark'
+"colorscheme onedark
+"let g:airline_theme='onedark'
+
+" JellyBeans
+colorscheme jellybeans
+let g:airline_theme='jellybeans'
