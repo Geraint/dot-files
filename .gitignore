@@ -1,5 +1,5 @@
 *.swp
-nvim/.config/nvim/.netrwhist
+nvim/.config/nvim/.netrw*
 nvim/.config/nvim/autoload/plug.vim
 nvim/.config/nvim/pack/minpac/
 vim/.vim/.netrwhist
