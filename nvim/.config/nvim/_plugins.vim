@@ -14,6 +14,7 @@ Plug 'Geraint/vim-phpunit'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/echodoc.vim'
 Plug 'SirVer/ultisnips'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'arcticicestudio/nord-vim'
 Plug 'christoomey/vim-tmux-navigator'
@@ -30,6 +31,7 @@ Plug 'majutsushi/tagbar'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'nanotech/jellybeans.vim'
 Plug 'radenling/vim-dispatch-neovim'
+Plug 'scrooloose/nerdtree'
 Plug 'thirtythreeforty/lessspace.vim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tpope/vim-dispatch'
@@ -37,12 +39,12 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-php/tagbar-phpctags.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'w0rp/ale'
-Plug 'tpope/vim-vinegar'
 
 call plug#end()
 
@@ -76,11 +78,8 @@ let g:merginal_windowWidth = 65
 nnoremap <C-p> :<C-u>Files<CR>
 nnoremap <C-o> :Buffers<CR>
 
-" Language Client
-let g:LanguageClient_serverCommands = {
-    \ 'php': ['tcp://127.0.0.1:2088'],
-\ }
-nnoremap <leader>lc :call LanguageClient_contextMenu()<cr>
+" NERDTree
+map <leader>e :NERDTreeToggle<CR>
 
 " Ripgrep
 let g:rg_highlight = 1
