@@ -42,6 +42,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-php/tagbar-phpctags.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'w0rp/ale'
+Plug 'tpope/vim-vinegar'
 
 call plug#end()
 
