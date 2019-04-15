@@ -79,7 +79,8 @@ nnoremap <C-p> :<C-u>Files<CR>
 nnoremap <C-o> :Buffers<CR>
 
 " NERDTree
-map <leader>e :NERDTreeToggle<CR>
+map <leader>nt :NERDTreeToggle<CR>
+map <leader>nf :NERDTreeFind<CR>
 
 " Ripgrep
 let g:rg_highlight = 1
