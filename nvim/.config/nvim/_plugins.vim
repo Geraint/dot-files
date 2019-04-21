@@ -30,6 +30,7 @@ Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 Plug 'majutsushi/tagbar'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'nanotech/jellybeans.vim'
+Plug 'nathanaelkane/vim-indent-guides'
 Plug 'radenling/vim-dispatch-neovim'
 Plug 'scrooloose/nerdtree'
 Plug 'thirtythreeforty/lessspace.vim'
