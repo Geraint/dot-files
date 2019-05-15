@@ -31,11 +31,7 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'nanotech/jellybeans.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'radenling/vim-dispatch-neovim'
-<<<<<<< HEAD
-=======
 Plug 'rhysd/git-messenger.vim'
-Plug 'scrooloose/nerdtree'
->>>>>>> c7534d6822c9a27068ee44fe4c42cf03aa551e04
 Plug 'thirtythreeforty/lessspace.vim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tpope/vim-dispatch'
