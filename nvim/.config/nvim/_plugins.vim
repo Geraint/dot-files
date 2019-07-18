@@ -79,10 +79,6 @@ let g:merginal_windowWidth = 65
 nnoremap <C-p> :<C-u>Files<CR>
 nnoremap <C-o> :Buffers<CR>
 
-" NERDTree
-map <leader>nt :NERDTreeToggle<CR>
-map <leader>nf :NERDTreeFind<CR>
-
 " Ripgrep
 let g:rg_highlight = 1
 

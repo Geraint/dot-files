@@ -23,3 +23,6 @@ nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
 
+" write via sudo
+" see https://stackoverflow.com/a/7078429
+cmap w!! w !sudo tee > /dev/null %
