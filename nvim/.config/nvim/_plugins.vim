@@ -18,6 +18,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'arcticicestudio/nord-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'idanarye/vim-merginal'
+Plug 'janko/vim-test'
 Plug 'joshdick/onedark.vim'
 Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -88,6 +89,15 @@ nnoremap <C-b> :TagbarToggle<CR>
 " UltiSnips
 let g:UltiSnipsExpandTrigger = "<C-j>"
 
+" vim-test
+let test#strategy = "dispatch"
+let test#php#phpunit#options = '--no-coverage'
+
+nmap <silent> <leader>tn :TestNearest<CR>
+nmap <silent> <leader>tf :TestFile<CR>
+nmap <silent> <leader>ts :TestSuite<CR>
+nmap <silent> <leader>tl :TestLast<CR>
+nmap <silent> <leader>tv :TestVisit<CR>
 
 " VimWiki
 let g:vimwiki_list = [
