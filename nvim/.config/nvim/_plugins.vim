@@ -20,6 +20,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'idanarye/vim-merginal'
 Plug 'janko/vim-test'
 Plug 'joshdick/onedark.vim'
+Plug 'jpalardy/vim-slime/'
 Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -74,14 +75,25 @@ let g:deoplete#ignore_sources.php = ['omni']
 " Fugitive/Merginal
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:merginal_windowWidth = 65
+nmap <leader>gb :Merginal<CR>
+nmap <leader>gp :Gpull<CR>
 
 " FZF
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <C-p> :<C-u>Files<CR>
-nnoremap <C-o> :Buffers<CR>
+"nnoremap <C-p> :<C-u>Files<CR>
+"nnoremap <C-o> :Buffers<CR>
+nmap <leader>ff :Files<CR>
+nmap <leader>fl :BLines<CR>
+nmap <leader>fb :Buffers<CR>
+nmap <leader>f: :History:<CR>
 
 " Ripgrep
 let g:rg_highlight = 1
+
+" Slime
+let g:slime_target = "tmux"
+" see https://man.openbsd.org/OpenBSD-current/man1/tmux.1#_last__2
+let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
 
 " Tagbar
 nnoremap <C-b> :TagbarToggle<CR>
