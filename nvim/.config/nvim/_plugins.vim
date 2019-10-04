@@ -78,6 +78,9 @@ let g:merginal_windowWidth = 65
 nmap <leader>gb :Merginal<CR>
 nmap <leader>gp :Gpull<CR>
 
+" Limelight
+nmap <leader>vl :Limelight!!<CR>
+
 " FZF
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "nnoremap <C-p> :<C-u>Files<CR>
