@@ -24,6 +24,7 @@ Plug 'jpalardy/vim-slime/'
 Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/gv.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-slash'
 Plug 'lumiliet/vim-twig'
@@ -72,10 +73,12 @@ inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<tab>"
 let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
 let g:deoplete#ignore_sources.php = ['omni']
 
-" Fugitive/Merginal
+" Fugitive/GV/Merginal
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:merginal_windowWidth = 65
 nmap <leader>gb :Merginal<CR>
+nmap <leader>gl :GV<CR>
+nmap <leader>g0 :GV!<CR>
 nmap <leader>gp :Gpull<CR>
 
 " Limelight
