@@ -11,6 +11,7 @@ set cursorcolumn
 set cursorline
 set listchars=tab:▸\ ,eol:¶,trail:·
 set nowrap
+set rnu
 set number
 
 syntax on
