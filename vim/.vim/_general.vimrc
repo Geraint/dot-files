@@ -7,12 +7,11 @@ endif
 
 set background=dark
 set cmdheight=2
-"set incsearch
 set hlsearch
-set list " Show invisible whitespace by default
 set listchars=tab:▸\ ,eol:¶,trail:· " Use the same symbols as TextMate for tabstops and EOLs
 set nowrap
 set number
+set rnu
 set scrolloff=5 " keep at least 5 lines above/below
 hi CursorLine term=none cterm=bold ctermbg=none
 
@@ -33,3 +32,4 @@ set history=200
 set hidden
 au GUIEnter * simalt ~x
 set encoding=utf-8
+set modeline
