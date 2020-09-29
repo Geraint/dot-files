@@ -1,7 +1,8 @@
 *.swp
-nvim/.config/nvim/.netrw*
-nvim/.config/nvim/autoload/plug.vim
-nvim/.config/nvim/pack/minpac/
-vim/.vim/.netrwhist
-vim/.vim/autoload/
-vim/.vim/plugged/
+/nvim/.config/composer/
+/nvim/.config/nvim/.netrw*
+/nvim/.config/nvim/autoload/plug.vim
+/nvim/.config/nvim/pack/minpac/
+/vim/.vim/.netrwhist
+/vim/.vim/autoload/
+/vim/.vim/plugged/
