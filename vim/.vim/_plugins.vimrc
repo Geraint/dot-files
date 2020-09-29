@@ -28,8 +28,10 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
 " FZF
-nnoremap <C-p> :<C-u>Files<CR>
-nnoremap <C-o> :Buffers<CR>
+nmap <leader>ff :Files<CR>
+nmap <leader>fl :BLines<CR>
+nmap <leader>fb :Buffers<CR>
+nmap <leader>f: :History:<CR>
 
 " OneDark
 let g:onedark_terminal_italics=1
