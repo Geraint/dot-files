@@ -12,7 +12,8 @@ if  [ "$(id -u)" != "0" ]; then
     PS1='\[\e[1;32m\]\u@\h \[\e[1;34m\]\w \$\[\e[0m\] '
     # become root, but with my .bashrc
     alias sup='sudo bash --rcfile ~/.bashrc'
-    alias level-up='sh -c "cd ~/dot-files; git pull; git submodule update --init"'
+    # run vim, but with my .vimrc and plugins
+    alias suvim='sudo HOME=~ vim -N config/config.ini'
 else
     source "/root/.bashrc"
     # red (root) prompt
