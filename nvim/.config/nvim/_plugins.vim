@@ -52,6 +52,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-php/tagbar-phpctags.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'w0rp/ale'
+Plug 'wellle/context.vim'
 
 call plug#end()
 
@@ -75,6 +76,12 @@ let g:ale_lint_delay = 1000
 let g:ale_open_list = 1
 nmap <silent> <leader>ap <Plug>(ale_previous_wrap)
 nmap <silent> <leader>an <Plug>(ale_next_wrap)
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Context
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:context_enabled = 0
+nmap <leader>ct :ContextToggle<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Deoplete
