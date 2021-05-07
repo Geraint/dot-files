@@ -26,6 +26,7 @@ Plug 'jpalardy/vim-slime/'
 Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-slash'
@@ -78,6 +79,7 @@ let g:ale_lint_on_save = 1
 "let g:ale_lint_on_text_changed = 0
 let g:ale_lint_delay = 1000
 let g:ale_open_list = 1
+let g:airline#extensions#ale#enabled = 1
 nmap <silent> <leader>ap <Plug>(ale_previous_wrap)
 nmap <silent> <leader>an <Plug>(ale_next_wrap)
 
