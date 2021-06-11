@@ -18,3 +18,6 @@ nnoremap <Leader>p "+p
 nnoremap <Leader>P "+P
 vnoremap <Leader>p "+p
 vnoremap <Leader>P "+P
+
+" switch to last buffer
+nnoremap <leader><leader> <C-S-^>
