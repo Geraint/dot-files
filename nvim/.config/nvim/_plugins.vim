@@ -11,6 +11,7 @@ endif
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'Geraint/vim-phpunit'
+Plug 'RyanMillerC/better-vim-tmux-resizer'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/echodoc.vim'
 Plug 'SirVer/ultisnips'
