@@ -37,6 +37,7 @@ Plug 'majutsushi/tagbar'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'nanotech/jellybeans.vim'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'radenling/vim-dispatch-neovim'
 Plug 'rhysd/git-messenger.vim'
 Plug 'stsewd/fzf-checkout.vim'
@@ -70,12 +71,6 @@ let g:airline#extensions#tabline#enabled = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ale
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ale_linters = {
-\   'php': ['php', 'phpcs', 'phpmd'],
-\}
-let g:ale_php_phpcs_standard='PSR2'
-let g:ale_php_phpmd_executable='vendor/bin/phpmd'
-let g:ale_php_phpmd_ruleset='phpmd.xml'
 let g:ale_lint_on_save = 1
 "let g:ale_lint_on_text_changed = 0
 let g:ale_lint_delay = 1000
@@ -145,6 +140,21 @@ let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
 " Tagbar
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <C-b> :TagbarToggle<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" TreeSitter
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+    ensure_installed = "php",
+    highlight = {
+        enable = true,
+    },
+    indent = {
+        enable = true,
+    }
+}
+EOF
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " UltiSnips
