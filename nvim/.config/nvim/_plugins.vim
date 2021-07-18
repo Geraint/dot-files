@@ -78,6 +78,7 @@ let g:ale_open_list = 1
 let g:airline#extensions#ale#enabled = 1
 nmap <silent> <leader>ap <Plug>(ale_previous_wrap)
 nmap <silent> <leader>an <Plug>(ale_next_wrap)
+nmap <silent> <leader>af <Plug>(ale_fix)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Context
@@ -146,7 +147,7 @@ nnoremap <C-b> :TagbarToggle<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-    ensure_installed = "php",
+    ensure_installed = { "javascript", "php" },
     highlight = {
         enable = true,
     },
