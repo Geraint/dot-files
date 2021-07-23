@@ -48,6 +48,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'unblevable/quick-scope'
@@ -149,9 +150,6 @@ lua <<EOF
 require'nvim-treesitter.configs'.setup {
     ensure_installed = { "javascript", "php" },
     highlight = {
-        enable = true,
-    },
-    indent = {
         enable = true,
     }
 }
