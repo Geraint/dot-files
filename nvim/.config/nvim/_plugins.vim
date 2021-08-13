@@ -109,7 +109,7 @@ let g:merginal_windowWidth = 65
 nmap <leader>gB :Merginal<CR>
 nmap <leader>gl :GV<CR>
 nmap <leader>g0 :GV!<CR>
-nmap <leader>gp :Gpull<CR>
+nmap <leader>gp :Git pull<CR>
 
 nmap <leader>gb :GBranches<CR>
 let g:fzf_branch_actions = {
@@ -152,7 +152,7 @@ nnoremap <C-b> :TagbarToggle<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-    ensure_installed = { "javascript", "php" },
+    ensure_installed = { "javascript" },
     highlight = {
         enable = true,
     }
