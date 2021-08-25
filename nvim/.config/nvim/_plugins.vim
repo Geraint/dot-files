@@ -128,6 +128,7 @@ nmap <leader>ff :Files<CR>
 nmap <leader>fl :BLines<CR>
 nmap <leader>fb :Buffers<CR>
 nmap <leader>f: :History:<CR>
+nmap <leader>f/ :History/:<CR>
 let g:fzf_layout = { 'window': { 'width': 0.6, 'height': 0.6, 'xoffset': 1 } }
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
