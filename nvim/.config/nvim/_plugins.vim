@@ -61,6 +61,7 @@ Plug 'unblevable/quick-scope'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-php/tagbar-phpctags.vim'
+Plug 'vim-vdebug/vdebug'
 Plug 'vimwiki/vimwiki'
 Plug 'w0rp/ale'
 Plug 'wellle/context.vim'
@@ -198,6 +199,14 @@ let g:UltiSnipsExpandTrigger = "<C-j>"
 " vim-closetag
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:closetag_filenames = '*.html,*.twig.html'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vdebug
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:vdebug_options = {
+\    "break_on_open" : 0,
+\    "watch_window_style" : "compact"
+\}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-test
