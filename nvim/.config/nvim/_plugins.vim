@@ -24,6 +24,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'embark-theme/vim', { 'as': 'embark' }
 Plug 'epii1/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+Plug 'https://gitlab.com/yorickpeterse/nvim-pqf.git'
 Plug 'idanarye/vim-merginal'
 Plug 'janko/vim-test'
 Plug 'joshdick/onedark.vim'
@@ -133,6 +134,13 @@ nmap <leader>fb :Buffers<CR>
 nmap <leader>f: :History:<CR>
 nmap <leader>f/ :History/:<CR>
 let g:fzf_layout = { 'window': { 'width': 0.6, 'height': 0.6, 'xoffset': 1 } }
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" nvim-pqf
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+lua <<EOF
+require('pqf').setup()
+EOF
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ripgrep
@@ -250,6 +258,12 @@ let g:onedark_terminal_italics=1
 "let g:airline_theme='onedark'
 
 " JellyBeans
+let g:jellybeans_overrides = {
+\    'background': { 'ctermbg': 'none', '256ctermbg': 'none' },
+\}
+if has('termguicolors') && &termguicolors
+    let g:jellybeans_overrides['background']['guibg'] = 'none'
+endif
 colorscheme jellybeans
 let g:airline_theme='jellybeans'
 
