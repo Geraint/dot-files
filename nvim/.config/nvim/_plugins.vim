@@ -24,7 +24,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'embark-theme/vim', { 'as': 'embark' }
 Plug 'epii1/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
-Plug 'https://gitlab.com/yorickpeterse/nvim-pqf.git'
+Plug 'ggandor/lightspeed.nvim'
 Plug 'idanarye/vim-merginal'
 Plug 'janko/vim-test'
 Plug 'joshdick/onedark.vim'
@@ -41,8 +41,8 @@ Plug 'majutsushi/tagbar'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'nanotech/jellybeans.vim'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'nvim-treesitter/nvim-treesitter', {'branch' : '0.5-compat', 'do': ':TSUpdate'}
-Plug 'nvim-treesitter/nvim-treesitter-textobjects', {'branch' : '0.5-compat'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'radenling/vim-dispatch-neovim'
 Plug 'rhysd/git-messenger.vim'
 Plug 'stsewd/fzf-checkout.vim'
@@ -134,13 +134,6 @@ nmap <leader>fb :Buffers<CR>
 nmap <leader>f: :History:<CR>
 nmap <leader>f/ :History/:<CR>
 let g:fzf_layout = { 'window': { 'width': 0.6, 'height': 0.6, 'xoffset': 1 } }
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" nvim-pqf
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-lua <<EOF
-require('pqf').setup()
-EOF
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ripgrep
