@@ -21,9 +21,9 @@ Plug 'StanAngeloff/php.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'arcticicestudio/nord-vim'
+Plug 'camilledejoye/phpactor-mappings'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'embark-theme/vim', { 'as': 'embark' }
-Plug 'epii1/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 Plug 'ggandor/lightspeed.nvim'
 Plug 'idanarye/vim-merginal'
 Plug 'janko/vim-test'
@@ -104,9 +104,6 @@ nmap <leader>ct :ContextToggle<CR>
 let g:deoplete#enable_at_startup = 1
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<tab>"
-" work with phpcd
-"let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
-"let g:deoplete#ignore_sources.php = ['omni']
 call deoplete#custom#option('ignore_sources', {'php': ['omni']})
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -141,9 +138,19 @@ let g:fzf_layout = { 'window': { 'width': 0.6, 'height': 0.6, 'xoffset': 1 } }
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " LSP
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-lua << EOF
-require'lspconfig'.phpactor.setup{}
-EOF
+"lua << EOF
+"require'lspconfig'.phpactor.setup{}
+"EOF
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Phpactor
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:phpactorActivateOverlapingMappings = v:true
+let g:phpactorCustomMappings = [
+  \ ['<Leader>pp', '<Plug>phpactorContextMenu', 'n'],
+  \ ['<Leader>pn', '<Plug>phpactorNavigate', 'n'],
+  \ ['<Leader>pt', '<Plug>phpactorTransform', 'n'],
+\ ]
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ripgrep
