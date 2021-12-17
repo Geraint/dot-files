@@ -107,6 +107,13 @@ inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<tab>"
 call deoplete#custom#option('ignore_sources', {'php': ['omni']})
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Echodoc
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:echodoc#enable_at_startup = 1
+let g:echodoc#type = 'floating'
+highlight link EchoDocFloat Pmenu
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Fugitive/GV/Merginal/fzf-checkout
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:merginal_windowWidth = 65
