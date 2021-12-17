@@ -48,6 +48,7 @@ Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
 Plug 'radenling/vim-dispatch-neovim'
 Plug 'rhysd/git-messenger.vim'
+Plug 'romgrk/nvim-treesitter-context'
 Plug 'stsewd/fzf-checkout.vim'
 Plug 'swekaj/php-foldexpr.vim'
 Plug 'thirtythreeforty/lessspace.vim'
@@ -68,7 +69,6 @@ Plug 'vim-php/tagbar-phpctags.vim'
 Plug 'vim-vdebug/vdebug'
 Plug 'vimwiki/vimwiki'
 Plug 'w0rp/ale'
-Plug 'wellle/context.vim'
 
 call plug#end()
 
