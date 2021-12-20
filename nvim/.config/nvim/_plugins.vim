@@ -26,7 +26,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'embark-theme/vim', { 'as': 'embark' }
 Plug 'ggandor/lightspeed.nvim'
 Plug 'idanarye/vim-merginal'
-Plug 'janko/vim-test'
 Plug 'joshdick/onedark.vim'
 Plug 'jpalardy/vim-slime/'
 Plug 'jremmen/vim-ripgrep'
@@ -47,6 +46,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
 Plug 'radenling/vim-dispatch-neovim'
+Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 Plug 'rhysd/git-messenger.vim'
 Plug 'romgrk/nvim-treesitter-context'
 Plug 'stsewd/fzf-checkout.vim'
@@ -66,6 +66,7 @@ Plug 'unblevable/quick-scope'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-php/tagbar-phpctags.vim'
+Plug 'vim-test/vim-test'
 Plug 'vim-vdebug/vdebug'
 Plug 'vimwiki/vimwiki'
 Plug 'w0rp/ale'
@@ -244,6 +245,17 @@ nmap <silent> <leader>tf :TestFile<CR>
 nmap <silent> <leader>ts :TestSuite<CR>
 nmap <silent> <leader>tl :TestLast<CR>
 nmap <silent> <leader>tv :TestVisit<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-ultest
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <silent> <leader>un :UltestNearest<CR>
+nmap <silent> <leader>uf :Ultest<CR>
+nmap <silent> <leader>ul :UltltestLast<CR>
+nmap <silent> <leader>us :UltestSummary!<CR>
+
+nmap ]u <Plug>(ultest-next-fail)
+nmap [u <Plug>(ultest-prev-fail)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " VimWiki
