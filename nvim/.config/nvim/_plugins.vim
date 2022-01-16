@@ -24,7 +24,6 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'camilledejoye/phpactor-mappings'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'embark-theme/vim', { 'as': 'embark' }
-Plug 'ggandor/lightspeed.nvim'
 Plug 'idanarye/vim-merginal'
 Plug 'joshdick/onedark.vim'
 Plug 'jpalardy/vim-slime/'
@@ -48,6 +47,7 @@ Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --n
 Plug 'radenling/vim-dispatch-neovim'
 Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 Plug 'rhysd/git-messenger.vim'
+Plug 'rlane/pounce.nvim'
 Plug 'romgrk/nvim-treesitter-context'
 Plug 'stsewd/fzf-checkout.vim'
 Plug 'swekaj/php-foldexpr.vim'
@@ -132,7 +132,7 @@ let g:fzf_branch_actions = {
 nmap <leader>vl :Limelight!!<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" FZF
+" FZF/Pounce
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "nnoremap <C-p> :<C-u>Files<CR>
 "nnoremap <C-o> :Buffers<CR>
@@ -142,6 +142,8 @@ nmap <leader>fb :Buffers<CR>
 nmap <leader>f: :History:<CR>
 nmap <leader>f/ :History/:<CR>
 let g:fzf_layout = { 'window': { 'width': 0.6, 'height': 0.6, 'xoffset': 1 } }
+
+nmap <leader>fs :Pounce<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " LSP
