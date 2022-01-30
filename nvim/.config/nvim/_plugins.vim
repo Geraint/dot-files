@@ -25,23 +25,25 @@ Plug 'beauwilliams/focus.nvim'
 Plug 'camilledejoye/phpactor-mappings'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'embark-theme/vim', { 'as': 'embark' }
-Plug 'idanarye/vim-merginal'
 Plug 'joshdick/onedark.vim'
 Plug 'jpalardy/vim-slime/'
 Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-slash'
 Plug 'kristijanhusak/deoplete-phpactor'
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'lumiliet/vim-twig'
 Plug 'majutsushi/tagbar'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'nanotech/jellybeans.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
@@ -52,7 +54,6 @@ Plug 'rlane/pounce.nvim'
 Plug 'romgrk/nvim-treesitter-context'
 Plug 'stsewd/fzf-checkout.vim'
 Plug 'swekaj/php-foldexpr.vim'
-Plug 'thirtythreeforty/lessspace.vim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
@@ -128,37 +129,17 @@ vim.api.nvim_set_keymap('n', '<leader>st', ':FocusToggle<CR>', { silent = true }
 EOF
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Fugitive/GV/Merginal/fzf-checkout
+" Fugitive/GV/
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:merginal_windowWidth = 65
-nmap <leader>gB :Merginal<CR>
 nmap <leader>gl :GV<CR>
 nmap <leader>g0 :GV!<CR>
 nmap <leader>gp :Git pull<CR>
-
-nmap <leader>gb :GBranches<CR>
-let g:fzf_branch_actions = {
-      \ 'track': {'keymap': 'ctrl-t'},
-      \}
+nmap <leader>gP :Git push<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Limelight
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <leader>vl :Limelight!!<CR>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" FZF/Pounce
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"nnoremap <C-p> :<C-u>Files<CR>
-"nnoremap <C-o> :Buffers<CR>
-nmap <leader>ff :Files<CR>
-nmap <leader>fl :BLines<CR>
-nmap <leader>fb :Buffers<CR>
-nmap <leader>f: :History:<CR>
-nmap <leader>f/ :History/:<CR>
-let g:fzf_layout = { 'window': { 'width': 0.6, 'height': 0.6, 'xoffset': 1 } }
-
-nmap <leader>fs :Pounce<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " LSP
@@ -178,6 +159,11 @@ let g:phpactorCustomMappings = [
 \ ]
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Pounce
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <leader>fs :Pounce<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ripgrep
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:rg_highlight = 1
@@ -193,6 +179,21 @@ let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
 " Tagbar
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <C-b> :TagbarToggle<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Telescope
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fl <cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>f: <cmd>lua require('telescope.builtin').command_history()<cr>
+nnoremap <leader>f/ <cmd>lua require('telescope.builtin').search_history()<cr>
+nnoremap <leader>ft <cmd>lua require('telescope.builtin').treesitter()<cr>
+
+nnoremap <leader>gb <cmd>lua require('telescope.builtin').git_branches()<cr>
+
+autocmd FileType TelescopePrompt call deoplete#custom#buffer_option('auto_complete', v:false)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " TreeSitter
