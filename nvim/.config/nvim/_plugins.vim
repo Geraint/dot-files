@@ -21,6 +21,7 @@ Plug 'StanAngeloff/php.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'arcticicestudio/nord-vim'
+Plug 'beauwilliams/focus.nvim'
 Plug 'camilledejoye/phpactor-mappings'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'embark-theme/vim', { 'as': 'embark' }
@@ -115,6 +116,18 @@ let g:echodoc#type = 'floating'
 highlight link EchoDocFloat Pmenu
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Focus
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+lua << EOF
+require("focus").setup()
+vim.api.nvim_set_keymap('n', '<leader>sh', ':FocusSplitLeft<CR>', { silent = true })
+vim.api.nvim_set_keymap('n', '<leader>sj', ':FocusSplitDown<CR>', { silent = true })
+vim.api.nvim_set_keymap('n', '<leader>sk', ':FocusSplitUp<CR>', { silent = true })
+vim.api.nvim_set_keymap('n', '<leader>sl', ':FocusSplitRight<CR>', { silent = true })
+vim.api.nvim_set_keymap('n', '<leader>st', ':FocusToggle<CR>', { silent = true })
+EOF
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Fugitive/GV/Merginal/fzf-checkout
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:merginal_windowWidth = 65
@@ -128,7 +141,9 @@ let g:fzf_branch_actions = {
       \ 'track': {'keymap': 'ctrl-t'},
       \}
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Limelight
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <leader>vl :Limelight!!<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
