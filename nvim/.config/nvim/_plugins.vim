@@ -53,6 +53,7 @@ Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 Plug 'rhysd/git-messenger.vim'
 Plug 'rlane/pounce.nvim'
 Plug 'romgrk/nvim-treesitter-context'
+Plug 'simrat39/symbols-outline.nvim'
 Plug 'stsewd/fzf-checkout.vim'
 Plug 'swekaj/php-foldexpr.vim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -188,6 +189,24 @@ let g:rg_highlight = 1
 let g:slime_target = "tmux"
 " see https://man.openbsd.org/OpenBSD-current/man1/tmux.1#_last__2
 let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Symbols Outline
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+lua <<EOF
+vim.g.symbols_outline = {
+    highlight_hovered_item = false,
+    auto_preview = false,
+    show_numbers = true,
+    show_relative_numbers = true,
+    width = 33,
+    keymaps = {
+        hover_symbol = "H",
+    },
+}
+EOF
+
+nnoremap <leader>so :SymbolsOutline<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tagbar
