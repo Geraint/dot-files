@@ -42,6 +42,7 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -65,8 +66,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'unblevable/quick-scope'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-php/tagbar-phpctags.vim'
 Plug 'vim-test/vim-test'
 Plug 'vim-vdebug/vdebug'
@@ -74,14 +73,6 @@ Plug 'vimwiki/vimwiki'
 Plug 'w0rp/ale'
 
 call plug#end()
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Airline
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline#extensions#ale#enabled = 1
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-" For theme, see COLOUR section below
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ale
@@ -147,6 +138,29 @@ nmap <leader>vl :Limelight!!<CR>
 "lua << EOF
 "require'lspconfig'.phpactor.setup{}
 "EOF
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" lualine.nvim
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+lua <<EOF
+require('lualine').setup {
+    options = {
+        theme  = 'jellybeans',
+    },
+    tabline = {
+        lualine_a = {'buffers'},
+        lualine_b = {},
+        lualine_c = {},
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {}
+    },
+    extensions = {
+        'fugitive',
+        'quickfix',
+    },
+}
+EOF
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Phpactor
@@ -302,13 +316,11 @@ let g:nord_italic_comments = 1
 let g:nord_cursor_line_number_background = 1
 let g:nord_comment_brightness = 15
 "colorscheme nord
-"let g:airline_theme='nord'
 
 " OneDark
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let g:onedark_terminal_italics=1
 "colorscheme onedark
-"let g:airline_theme='onedark'
 
 " JellyBeans
 let g:jellybeans_overrides = {
@@ -318,7 +330,6 @@ if has('termguicolors') && &termguicolors
     let g:jellybeans_overrides['background']['guibg'] = 'none'
 endif
 colorscheme jellybeans
-let g:airline_theme='jellybeans'
 
 " Embark
 "colorscheme embark
