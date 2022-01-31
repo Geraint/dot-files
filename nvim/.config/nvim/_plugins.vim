@@ -12,6 +12,7 @@ endif
 
 call plug#begin('~/.local/share/nvim/plugged')
 
+Plug 'AckslD/nvim-neoclip.lua'
 Plug 'Geraint/vim-phpunit'
 Plug 'RyanMillerC/better-vim-tmux-resizer'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -162,6 +163,15 @@ require('lualine').setup {
     },
 }
 EOF
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Nvim-neoclip
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+lua <<EOF
+require('neoclip').setup()
+require('telescope').load_extension('neoclip')
+EOF
+nnoremap <leader>fy <cmd>lua require('telescope').extensions.neoclip.default()<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Phpactor
