@@ -23,6 +23,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'arcticicestudio/nord-vim'
 Plug 'beauwilliams/focus.nvim'
+Plug 'camgraff/telescope-tmux.nvim'
 Plug 'camilledejoye/phpactor-mappings'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'embark-theme/vim', { 'as': 'embark' }
@@ -42,6 +43,7 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'nanotech/jellybeans.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neovim/nvim-lspconfig'
+Plug 'norcalli/nvim-terminal.lua'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
@@ -243,6 +245,11 @@ nnoremap <leader>ft <cmd>lua require('telescope.builtin').treesitter()<cr>
 nnoremap <leader>gb <cmd>lua require('telescope.builtin').git_branches()<cr>
 
 autocmd FileType TelescopePrompt call deoplete#custom#buffer_option('auto_complete', v:false)
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Nvim Terminal
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+lua require'terminal'.setup()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " TreeSitter
