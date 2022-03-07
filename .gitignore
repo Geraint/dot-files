@@ -1,9 +1,12 @@
 *.swp
+/nvim/.config/coc/
 /nvim/.config/composer/
 /nvim/.config/configstore/
+/nvim/.config/gitui/
 /nvim/.config/nvim/.netrw*
 /nvim/.config/nvim/autoload/plug.vim
 /nvim/.config/nvim/pack/minpac/
+/nvim/.config/nvim/plugin/
 /nvim/.config/wslu/
 /vim/.vim/.netrwhist
 /vim/.vim/autoload/
