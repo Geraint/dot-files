@@ -51,6 +51,18 @@ return require("packer").startup(function()
     require("telescope").load_extension("fzf")
 
     use({
+        "AckslD/nvim-neoclip.lua",
+        requires = {
+            { "nvim-telescope/telescope.nvim" },
+        },
+        config = function()
+            require("neoclip").setup()
+            require("telescope").load_extension("neoclip")
+        end,
+    })
+    use({ "camgraff/telescope-tmux.nvim" })
+
+    use({
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
         config = function()
@@ -66,18 +78,6 @@ return require("packer").startup(function()
             })
         end,
     })
-
-    use({
-        "AckslD/nvim-neoclip.lua",
-        requires = {
-            { "nvim-telescope/telescope.nvim" },
-        },
-        config = function()
-            require("neoclip").setup()
-            require("telescope").load_extension("neoclip")
-        end,
-    })
-    use({ "camgraff/telescope-tmux.nvim" })
 
     -- Git
     use({
@@ -153,27 +153,7 @@ return require("packer").startup(function()
             require("null-ls").setup({
                 -- debug = true,
                 sources = {
-
                     require("null-ls").builtins.diagnostics.php,
-
-                    -- require("null-ls").builtins.diagnostics.phpcs.with({
-                    --     command = "./vendor/bin/phpcs",
-                    --     extra_args = { "--standard=PSR12" },
-                    -- }),
-                    --
-                    -- require("null-ls").builtins.formatting.phpcbf.with({
-                    --     command = "./vendor/bin/phpcbf",
-                    --     extra_args = { "--standard=PSR12" },
-                    -- }),
-
-                    -- require("null-ls").builtins.diagnostics.phpstan.with({
-                    --     command = "./vendor/bin/phpstan",
-                    -- }),
-
-                    -- require("null-ls").builtins.diagnostics.phpmd.with({
-                    --     command = "./vendor/bin/phpmd",
-                    --     extra_args = { "phpmd.xml" },
-                    -- }),
                 },
             })
         end,
@@ -200,23 +180,6 @@ return require("packer").startup(function()
     })
 
     -- PHP Stuff
-    --use {
-    --  'phpactor/phpactor',
-    --  ft = 'php',
-    --  tag = '*',
-    --  run = 'composer install --no-dev -o',
-    --  -- config = function()
-    --  --   require('lspconfig').phpactor.setup{}
-    --  -- end
-    --}
-
-    --use {
-    --  'camilledejoye/phpactor-mappings',
-    --  ft = 'php',
-    --  --requires = {
-    --    --'phpactor/phpactor',
-    --  --}
-    --}
 
     use({
         "Geraint/vim-phpunit",
