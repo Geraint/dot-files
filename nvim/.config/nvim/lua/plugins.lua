@@ -22,20 +22,19 @@ vim.cmd([[
 return require("packer").startup(function()
     use("wbthomason/packer.nvim")
 
-    
-use {
-  "klen/nvim-config-local",
-  config = function()
-    require('config-local').setup {
-      -- Default configuration (optional)
-      config_files = { ".vimrc.lua", ".vimrc" },  -- Config file patterns to load (lua supported)
-      hashfile = vim.fn.stdpath("data") .. "/config-local", -- Where the plugin keeps files data
-      autocommands_create = true,                 -- Create autocommands (VimEnter, DirectoryChanged)
-      commands_create = true,                     -- Create commands (ConfigSource, ConfigEdit, ConfigTrust, ConfigIgnore)
-      silent = false,                             -- Disable plugin messages (Config loaded/ignored)
-    }
-  end
-}
+    use({
+        "klen/nvim-config-local",
+        config = function()
+            require("config-local").setup({
+                -- Default configuration (optional)
+                config_files = { ".vimrc.lua", ".vimrc" }, -- Config file patterns to load (lua supported)
+                hashfile = vim.fn.stdpath("data") .. "/config-local", -- Where the plugin keeps files data
+                autocommands_create = true, -- Create autocommands (VimEnter, DirectoryChanged)
+                commands_create = true, -- Create commands (ConfigSource, ConfigEdit, ConfigTrust, ConfigIgnore)
+                silent = false, -- Disable plugin messages (Config loaded/ignored)
+            })
+        end,
+    })
     -- Telescope
     use({
         "nvim-telescope/telescope.nvim",
@@ -62,7 +61,7 @@ use {
                     additional_vim_regex_highlighting = true,
                 },
                 indent = {
-                    enable = true
+                    enable = true,
                 },
             })
         end,
@@ -144,7 +143,7 @@ use {
         "neovim/nvim-lspconfig",
         config = function()
             require("keys.lspconfig").bind_keys()
-        end
+        end,
     })
 
     use({
@@ -177,7 +176,6 @@ use {
                     -- }),
                 },
             })
-
         end,
     })
 
