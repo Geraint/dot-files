@@ -72,9 +72,6 @@ return require("packer").startup(function()
                     enable = true,
                     additional_vim_regex_highlighting = true,
                 },
-                indent = {
-                    enable = true,
-                },
             })
         end,
     })
@@ -122,6 +119,14 @@ return require("packer").startup(function()
                     -- theme  = 'jellybeans',
                     theme = "tokyonight",
                 },
+                sections = {
+                    lualine_c = {
+                        {
+                            "filename",
+                            path = 1,
+                        },
+                    },
+                },
                 tabline = {
                     lualine_a = { "buffers" },
                     lualine_b = {},
@@ -140,6 +145,21 @@ return require("packer").startup(function()
 
     -- LSP
     use({
+        "jose-elias-alvarez/null-ls.nvim",
+        requires = { "nvim-lua/plenary.nvim" },
+        config = function()
+            require("null-ls").setup({
+                -- debug = true,
+                -- diagnostics_format = "[#{s}] #{m} (#{c})",
+                sources = {
+                    require("null-ls").builtins.diagnostics.php,
+                },
+                on_attach = require("keys.lsp-keys").on_attach,
+            })
+        end,
+    })
+
+    use({
         "neovim/nvim-lspconfig",
         config = function()
             require("keys.lspconfig").bind_keys()
@@ -147,21 +167,11 @@ return require("packer").startup(function()
     })
 
     use({
-        "jose-elias-alvarez/null-ls.nvim",
-        requires = { "nvim-lua/plenary.nvim" },
-        config = function()
-            require("null-ls").setup({
-                -- debug = true,
-                sources = {
-                    require("null-ls").builtins.diagnostics.php,
-                },
-            })
-        end,
-    })
-
-    use({
         "neoclide/coc.nvim",
         branch = "release",
+        config = function()
+            require("keys/coc").bind_keys()
+        end,
     })
     use({
         "folke/trouble.nvim",
@@ -180,6 +190,24 @@ return require("packer").startup(function()
     })
 
     -- PHP Stuff
+    use {
+      'phpactor/phpactor',
+      ft = 'php',
+      tag = '*',
+      run = 'composer install --no-dev -o',
+      config = function()
+        -- require('lspconfig').phpactor.setup{}
+		require('keys/phpactor').bind_keys()
+      end
+    }
+
+    use {
+      'camilledejoye/phpactor-mappings',
+      ft = 'php',
+      --requires = {
+        --'phpactor/phpactor',
+      --}
+    }
 
     use({
         "Geraint/vim-phpunit",

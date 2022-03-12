@@ -1,6 +1,6 @@
 -- Appearance
 vim.o.cmdheight = 2
-vim.o.signcolumn = "number"
+vim.o.signcolumn = "yes:1"
 vim.wo.cursorcolumn = true
 vim.wo.cursorline = true
 -- vim.o.listchars = "tab:▸\ ,eol:¶,trail:·"
