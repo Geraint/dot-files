@@ -25,3 +25,4 @@ vim.bo.tabstop = 4
 -- Behaviour
 vim.bo.undofile = true -- persistent undo
 vim.o.updatetime = 500 -- make vim-gitgutter more responsive
+vim.g.netrw_altfile = 1 -- netrw doesn't affect Control-6 (as much)
