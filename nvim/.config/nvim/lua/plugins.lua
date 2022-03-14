@@ -76,6 +76,12 @@ return require("packer").startup(function()
         end,
     })
 
+    ----------------------------------------------------------------------
+    -- Filesystem
+    ----------------------------------------------------------------------
+    use({"tpope/vim-eunuch"})
+    use({"tpope/vim-vinegar"})
+
     -- Git
     use({
         "tpope/vim-fugitive",
