@@ -7,6 +7,8 @@ function M.bind_keys()
   keymap('n', ']c', ':Gitsigns next_hunk<CR>', opts)
   keymap('n', '[c', ':Gitsigns prev_hunk<CR>', opts)
   keymap('n', '<leader>hu', ':Gitsigns reset_hunk<CR>', opts)
+  keymap('o', 'ih', ':<C-U>Gitsigns select_hunk<CR>', opts)
+  keymap('x', 'ih', ':<C-U>Gitsigns select_hunk<CR>', opts)
 end
 
 return M
