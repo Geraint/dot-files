@@ -35,7 +35,10 @@ return require("packer").startup(function()
             })
         end,
     })
+
+    ----------------------------------------------------------------------
     -- Telescope
+    ----------------------------------------------------------------------
     use({
         "nvim-telescope/telescope.nvim",
         requires = {
@@ -77,12 +80,19 @@ return require("packer").startup(function()
     })
 
     ----------------------------------------------------------------------
+    -- Motions
+    ----------------------------------------------------------------------
+    use({"rlane/pounce.nvim", config = function() require("keys.pounce").bind_keys() end })
+
+    ----------------------------------------------------------------------
     -- Filesystem
     ----------------------------------------------------------------------
     use({"tpope/vim-eunuch"})
     use({"tpope/vim-vinegar"})
 
+    ----------------------------------------------------------------------
     -- Git
+    ----------------------------------------------------------------------
     use({
         "tpope/vim-fugitive",
         config = function()
@@ -101,11 +111,15 @@ return require("packer").startup(function()
         end,
     })
 
+    ----------------------------------------------------------------------
     -- Tmux
+    ----------------------------------------------------------------------
     use({ "christoomey/vim-tmux-navigator" })
     use({ "RyanMillerC/better-vim-tmux-resizer" })
 
+    ----------------------------------------------------------------------
     -- Appearance Stuff
+    ----------------------------------------------------------------------
     use({ "nanotech/jellybeans.vim" })
     use({ "kyazdani42/nvim-web-devicons" })
     use({ "folke/tokyonight.nvim" })
@@ -149,7 +163,9 @@ return require("packer").startup(function()
         end,
     })
 
+    ----------------------------------------------------------------------
     -- LSP
+    ----------------------------------------------------------------------
     use({
         "jose-elias-alvarez/null-ls.nvim",
         requires = { "nvim-lua/plenary.nvim" },
@@ -195,7 +211,9 @@ return require("packer").startup(function()
         end,
     })
 
+    ----------------------------------------------------------------------
     -- PHP Stuff
+    ----------------------------------------------------------------------
     use {
       'phpactor/phpactor',
       ft = 'php',
@@ -234,6 +252,9 @@ return require("packer").startup(function()
         },
     })
 
+    ----------------------------------------------------------------------
+    -- General coding stuff
+    ----------------------------------------------------------------------
     use({ "tpope/vim-projectionist" })
     use({
         "numToStr/Comment.nvim",
