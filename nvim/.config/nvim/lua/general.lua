@@ -6,6 +6,7 @@ vim.wo.cursorline = true
 -- vim.o.listchars = "tab:▸\ ,eol:¶,trail:·"
 vim.wo.number = true
 vim.wo.relativenumber = true
+vim.wo.wrap = false
 
 -- Colorscheme
 vim.o.background = 'dark'
