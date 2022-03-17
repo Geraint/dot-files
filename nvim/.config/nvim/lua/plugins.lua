@@ -171,7 +171,7 @@ return require("packer").startup(function()
         requires = { "nvim-lua/plenary.nvim" },
         config = function()
             require("null-ls").setup({
-                -- debug = true,
+                debug = true,
                 -- diagnostics_format = "[#{s}] #{m} (#{c})",
                 sources = {
                     require("null-ls").builtins.diagnostics.php,
@@ -251,6 +251,8 @@ return require("packer").startup(function()
             "tpope/vim-dispatch",
         },
     })
+
+    use({"lumiliet/vim-twig"})
 
     ----------------------------------------------------------------------
     -- General coding stuff
