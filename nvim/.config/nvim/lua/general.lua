@@ -15,7 +15,7 @@ vim.o.termguicolors = true
 -- vim.cmd [[colorscheme jellybeans]]
 vim.g.tokyonight_style = "night"
 vim.g.tokyonight_transparent = true
-vim.cmd [[colorscheme tokyonight]]
+-- vim.cmd [[colorscheme tokyonight]]
 
 -- Tabs
 vim.bo.expandtab = true
