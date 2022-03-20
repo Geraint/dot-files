@@ -87,7 +87,14 @@ return require("packer").startup(function()
     ----------------------------------------------------------------------
     -- Search
     ----------------------------------------------------------------------
-    use({"junegunn/vim-slash"})
+    use({
+        "kevinhwang91/nvim-hlslens",
+        requires = { "haya14busa/vim-asterisk" },
+        config = function()
+            require("keys.nvim-hlslens").bind_keys()
+            require('hlslens').setup({ calm_down = true })
+        end
+    })
 
     ----------------------------------------------------------------------
     -- Filesystem
