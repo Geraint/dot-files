@@ -151,13 +151,15 @@ return require("packer").startup(function()
         end,
     })
 
+    use({"stevearc/dressing.nvim"})
+
     use({
         "nvim-lualine/lualine.nvim",
         config = function()
             require("lualine").setup({
                 options = {
                     -- theme  = 'jellybeans',
-                    theme = "tokyonight",
+                    theme = "kanagawa",
                 },
                 sections = {
                     lualine_c = {
