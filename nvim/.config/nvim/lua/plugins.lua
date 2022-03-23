@@ -108,7 +108,9 @@ return require("packer").startup(function()
         },
         config = function()
             require("keys.nvim-tree").bind_keys()
-            require'nvim-tree'.setup {}
+            require'nvim-tree'.setup {
+                hijack_netrw = false,
+            }
         end
     }
     ----------------------------------------------------------------------
