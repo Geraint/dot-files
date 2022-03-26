@@ -10,7 +10,7 @@ keymap('n', '<Space>', '', {})
 vim.g.mapleader = ' '
 
 -- Shortcut to rapidly toggle `set list`
--- keymap('n', '<leader>l', ':setlist!<CR>', opts)
+keymap('n', '<leader>ll', ':set list!<CR>', opts)
 
 -- switch to last buffer
 keymap('n', '<leader><leader>', '<C-S-^>', opts)
