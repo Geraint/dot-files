@@ -3,7 +3,8 @@ local M = {}
 function M.bind_keys()
   local keymap = vim.api.nvim_set_keymap
   local opts = { noremap = true }
-  keymap('n', '<leader>ff', ':lua require("telescope.builtin").find_files()<CR>', opts)
+  keymap('n', '<leader>fF', ':lua require("telescope.builtin").find_files()<CR>', opts)
+  keymap('n', '<leader>ff', ':lua require("telescope.builtin").git_files()<CR>', opts)
   keymap('n', '<leader>fl', ':lua require("telescope.builtin").current_buffer_fuzzy_find()<cr>', opts)
   keymap('n', '<leader>fg', ':lua require("telescope.builtin").live_grep()<cr>', opts)
   keymap('n', '<leader>fb', ':lua require("telescope.builtin").buffers({sort_mru=true, sort_lastused=true})<cr>', opts)
