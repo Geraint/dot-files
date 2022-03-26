@@ -68,12 +68,19 @@ return require("packer").startup(function()
     use({
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
+        requires = {
+            "p00f/nvim-ts-rainbow",
+        },
         config = function()
             require("nvim-treesitter.configs").setup({
-                ensure_installed = { "javascript", "php", "scss" },
+                ensure_installed = { "javascript", "lua", "ruby", "php", "scss" },
                 highlight = {
                     enable = true,
                     additional_vim_regex_highlighting = true,
+                },
+                rainbow = {
+                    enable = true,
+                    extended_mode = true,
                 },
             })
         end,
