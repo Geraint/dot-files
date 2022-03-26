@@ -81,6 +81,15 @@ return require("packer").startup(function()
                 rainbow = {
                     enable = true,
                     extended_mode = true,
+                    colors = {
+                        "#C34043",
+                        "#76946A",
+                        "#DCA561",
+                        "#7E9CD8",
+                        "#957FB8",
+                        "#7FB4CA",
+                        "#DCD7BA",
+                    },
                 },
             })
         end,
