@@ -215,6 +215,34 @@ return require("packer").startup(function()
         end,
     })
 
+    use({
+        "lukas-reineke/indent-blankline.nvim",
+        config = function()
+            vim.cmd [[highlight IndentBlanklineIndent1 guifg=#938AA9 gui=nocombine]]
+            vim.cmd [[highlight IndentBlanklineIndent2 guifg=#957FB8 gui=nocombine]]
+            vim.cmd [[highlight IndentBlanklineIndent3 guifg=#7E9CD8 gui=nocombine]]
+            vim.cmd [[highlight IndentBlanklineIndent4 guifg=#9CABCA gui=nocombine]]
+            vim.cmd [[highlight IndentBlanklineIndent5 guifg=#7FB4CA gui=nocombine]]
+            vim.cmd [[highlight IndentBlanklineIndent6 guifg=#7AA89F gui=nocombine]]
+            vim.cmd [[highlight IndentBlanklineIndent7 guifg=#98BB6C gui=nocombine]]
+            require("indent_blankline").setup {
+                char_highlight_list = {
+                    "IndentBlanklineIndent1",
+                    "IndentBlanklineIndent2",
+                    "IndentBlanklineIndent3",
+                    "IndentBlanklineIndent4",
+                    "IndentBlanklineIndent5",
+                    "IndentBlanklineIndent6",
+                    "IndentBlanklineIndent7",
+                },
+                enabled = false,
+                show_current_context = true,
+                show_current_context_start = true,
+                require("keys.indent-blankline").bind_keys()
+            }
+        end
+    })
+
     ----------------------------------------------------------------------
     -- LSP
     ----------------------------------------------------------------------
