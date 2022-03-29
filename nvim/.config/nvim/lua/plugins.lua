@@ -99,6 +99,13 @@ return require("packer").startup(function()
     -- Motions
     ----------------------------------------------------------------------
     use({"rlane/pounce.nvim", config = function() require("keys.pounce").bind_keys() end })
+    use({"tpope/vim-surround"})
+    use({"tpope/vim-repeat"})
+
+    ----------------------------------------------------------------------
+    -- Text transformation
+    ----------------------------------------------------------------------
+    use({"tpope/vim-abolish"})
 
     ----------------------------------------------------------------------
     -- Search
