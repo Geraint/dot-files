@@ -276,18 +276,22 @@ return require("packer").startup(function()
     })
 
     use({
+        "folke/trouble.nvim",
+        requires = {
+            "kyazdani42/nvim-web-devicons",
+            "folke/lsp-colors.nvim",
+        },
+        config = function()
+            require("trouble").setup({})
+            require("keys/trouble").bind_keys()
+        end,
+    })
+
+    use({
         "neoclide/coc.nvim",
         branch = "release",
         config = function()
             require("keys/coc").bind_keys()
-        end,
-    })
-    use({
-        "folke/trouble.nvim",
-        requires = "kyazdani42/nvim-web-devicons",
-        config = function()
-            require("trouble").setup({})
-            require("keys/trouble").bind_keys()
         end,
     })
 
@@ -359,6 +363,16 @@ return require("packer").startup(function()
             require("keys.symbols-outline").bind_keys()
         end,
     })
+
+    use({
+        "folke/todo-comments.nvim",
+        requires = "nvim-lua/plenary.nvim",
+        config = function()
+            require("todo-comments").setup {
+            }
+        end,
+    })
+
 
     if packer_bootstrap then
         require("packer").sync()
