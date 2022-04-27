@@ -191,6 +191,17 @@ return require("packer").startup(function()
     use({"stevearc/dressing.nvim"})
 
     use({
+        "rcarriga/nvim-notify",
+        config = function()
+            local notify = require("notify")
+            notify.setup({
+                background_colour = "#111111",
+            })
+            vim.notify = notify
+        end,
+    })
+
+    use({
         "nvim-lualine/lualine.nvim",
         config = function()
             require("lualine").setup({
