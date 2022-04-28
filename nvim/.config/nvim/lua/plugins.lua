@@ -206,6 +206,7 @@ return require("packer").startup(function()
         config = function()
             require("lualine").setup({
                 options = {
+                    globalstatus = true,
                     -- theme  = 'jellybeans',
                     theme = "kanagawa",
                 },
