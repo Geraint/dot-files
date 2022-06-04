@@ -106,6 +106,7 @@ return require("packer").startup(function()
     -- Text transformation
     ----------------------------------------------------------------------
     use({"tpope/vim-abolish"})
+    use({"tpope/vim-capslock"})
 
     ----------------------------------------------------------------------
     -- Search
