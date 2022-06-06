@@ -107,6 +107,7 @@ return require("packer").startup(function()
     ----------------------------------------------------------------------
     use({"tpope/vim-abolish"})
     use({"tpope/vim-capslock"})
+    use({"junegunn/vim-easy-align", config = function() require("keys.vim-easy-align").bind_keys() end })
 
     ----------------------------------------------------------------------
     -- Search
