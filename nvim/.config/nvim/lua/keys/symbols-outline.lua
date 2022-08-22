@@ -1,7 +1,7 @@
 local M = {}
 
 function M.set_options()
-    vim.g.symbols_outline = {
+    require("symbols-outline").setup({
         highlight_hovered_item = false,
         auto_preview = false,
         show_numbers = true,
@@ -10,7 +10,7 @@ function M.set_options()
         keymaps = {
             hover_symbol = "H",
         },
-    }
+    })
 end
 
 function M.bind_keys()
