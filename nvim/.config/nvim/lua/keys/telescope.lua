@@ -16,6 +16,7 @@ function M.bind_keys()
   keymap('n', '<leader>fp', ':lua require("telescope.builtin").builtin()<cr>', opts)
   keymap('n', '<leader>fn', ':lua require("telescope").extensions.notify.notify()<cr>', opts)
   keymap('n', '<leader>fy', ':Telescope neoclip<cr>', opts)
+  keymap('n', '<leader>f"', ':lua require("telescope.builtin").registers()<cr>', opts)
   keymap('n', '<leader>gb', ':lua require("telescope.builtin").git_branches()<cr>', opts)
 end
 
