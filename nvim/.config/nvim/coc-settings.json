@@ -1,5 +1,6 @@
 {
     "diagnostic.enable": false,
+    "outline.sortBy": "position",
     "phpactor.enable": true,
     "suggest.noselect": true,
     "signature.floatConfig": {
