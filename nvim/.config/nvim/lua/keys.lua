@@ -15,7 +15,13 @@ keymap('n', '<leader>ll', ':set list!<CR>', opts)
 -- switch to last buffer
 keymap('n', '<leader><leader>', '<C-S-^>', opts)
 
--- Deprecated - I@m using the LSP instead
--- require 'keys/phpactor'
-
-require('keys.clipboard').bind_keys()
+--------------------------------------------------------------------------------
+-- copy and paste to system clipboard with leader-y and leader-P/p
+-- see http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
+--------------------------------------------------------------------------------
+keymap("v", "<leader>y", '"+y', opts)
+keymap("v", "<Leader>d", '"+d', opts)
+keymap("n", "<Leader>p", '"+p', opts)
+keymap("n", "<Leader>P", '"+P', opts)
+keymap("v", "<Leader>p", '"+p', opts)
+keymap("v", "<Leader>P", '"+P', opts)

@@ -9,6 +9,7 @@
 /nvim/.config/nvim/plugin/
 /nvim/.config/wslu/
 /nvim/.local/share/nvim/*
+/nvim/.local/state/nvim/*
 /vim/.vim/.netrwhist
 /vim/.vim/autoload/
 /vim/.vim/plugged/
