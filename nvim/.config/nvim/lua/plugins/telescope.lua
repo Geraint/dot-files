@@ -19,6 +19,7 @@ return {
       { '<leader>fq', ':lua require("telescope.builtin").quickfix()<cr>', noremap = true },
       { '<leader>f"', ':lua require("telescope.builtin").registers()<cr>', noremap = true },
       { '<leader>gb', ':lua require("telescope.builtin").git_branches()<cr>', noremap = true },
+      { '<leader>fr', ':lua require("telescope.builtin").resume()<cr>', noremap = true },
     },
   },
   {

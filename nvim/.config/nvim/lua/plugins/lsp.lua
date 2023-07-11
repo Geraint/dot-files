@@ -14,7 +14,7 @@ return {
       require("mason-lspconfig").setup({
         ensure_installed = {
           "phpactor",
-          "typescript-language-server"
+          "tsserver"
         },
       })
     end,
