@@ -23,21 +23,22 @@ function M.on_attach(client, bufnr)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 
-  -- https://github.com/neovim/nvim-lspconfig/wiki/UI-Customization#show-line-diagnostics-automatically-in-hover-window
-  vim.api.nvim_create_autocmd("CursorHold", {
-    buffer = bufnr,
-    callback = function()
-      local opts = {
-        focusable = false,
-        close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
-        border = 'rounded',
-        source = 'always',
-        prefix = ' ',
-        scope = 'cursor',
-      }
-      vim.diagnostic.open_float(nil, opts)
-    end
-  })
+  -- -- https://github.com/neovim/nvim-lspconfig/wiki/UI-Customization#show-line-diagnostics-automatically-in-hover-window
+  -- vim.api.nvim_create_autocmd("CursorHold", {
+  --   buffer = bufnr,
+  --   callback = function()
+  --     local opts = {
+  --       focusable = false,
+  --       close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+  --       border = 'rounded',
+  --       source = 'always',
+  --       prefix = ' ',
+  --       scope = 'cursor',
+  --     }
+  --     vim.diagnostic.open_float(nil, opts)
+  --   end
+  -- })
+
 end
 
 return M
