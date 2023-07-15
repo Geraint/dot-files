@@ -13,7 +13,9 @@ return {
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = {
+          "cssls",
           "eslint",
+          "html",
           "jsonls",
           "phpactor@2023.04.10",
           "rubocop",
@@ -49,10 +51,23 @@ return {
         debounce_text_changes = 150,
       }
 
+      require("lspconfig").cssls.setup {
+        on_attach = require("lsp-on-attach").on_attach,
+        flags = lsp_flags,
+        capabilities = capabilities,
+      }
+
       require("lspconfig").eslint.setup {
         on_attach = require("lsp-on-attach").on_attach,
         flags = lsp_flags,
         capabilities = capabilities,
+      }
+
+      require("lspconfig").html.setup {
+        on_attach = require("lsp-on-attach").on_attach,
+        flags = lsp_flags,
+        capabilities = capabilities,
+        filetypes = { 'html', 'html.twig' },
       }
 
       require("lspconfig").jsonls.setup {
