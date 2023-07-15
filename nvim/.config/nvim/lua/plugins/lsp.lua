@@ -14,6 +14,7 @@ return {
       require("mason-lspconfig").setup({
         ensure_installed = {
           "eslint",
+          "jsonls",
           "phpactor@2023.04.10",
           "rubocop",
           "stylelint_lsp",
@@ -49,6 +50,12 @@ return {
       }
 
       require("lspconfig").eslint.setup {
+        on_attach = require("lsp-on-attach").on_attach,
+        flags = lsp_flags,
+        capabilities = capabilities,
+      }
+
+      require("lspconfig").jsonls.setup {
         on_attach = require("lsp-on-attach").on_attach,
         flags = lsp_flags,
         capabilities = capabilities,
