@@ -13,9 +13,9 @@ return {
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = {
-          -- "efm",
           "eslint",
           "phpactor@2023.04.10",
+          "rubocop",
           "stylelint_lsp",
           "tsserver"
         },
@@ -55,6 +55,12 @@ return {
       }
 
       require("lspconfig").phpactor.setup {
+        on_attach = require("lsp-on-attach").on_attach,
+        flags = lsp_flags,
+        capabilities = capabilities,
+      }
+
+      require("lspconfig").rubocop.setup {
         on_attach = require("lsp-on-attach").on_attach,
         flags = lsp_flags,
         capabilities = capabilities,
