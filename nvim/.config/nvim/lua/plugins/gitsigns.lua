@@ -15,6 +15,7 @@ return {
           keymap('n', '<leader>hu', ':Gitsigns reset_hunk<CR>', opts)
           keymap('o', 'ih', ':<C-U>Gitsigns select_hunk<CR>', opts)
           keymap('x', 'ih', ':<C-U>Gitsigns select_hunk<CR>', opts)
+          keymap('n', '<leader>xg', ':Gitsigns setqflist<CR>', opts)
         end
       })
     end,

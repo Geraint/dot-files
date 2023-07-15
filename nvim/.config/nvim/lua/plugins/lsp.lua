@@ -13,7 +13,10 @@ return {
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = {
-          "phpactor",
+          -- "efm",
+          "eslint",
+          "phpactor@2023.04.10",
+          "stylelint_lsp",
           "tsserver"
         },
       })
@@ -45,6 +48,12 @@ return {
         debounce_text_changes = 150,
       }
 
+      require("lspconfig").eslint.setup {
+        on_attach = require("lsp-on-attach").on_attach,
+        flags = lsp_flags,
+        capabilities = capabilities,
+      }
+
       require("lspconfig").phpactor.setup {
         on_attach = require("lsp-on-attach").on_attach,
         flags = lsp_flags,
@@ -52,6 +61,16 @@ return {
       }
 
       require("lspconfig").tsserver.setup {
+        on_attach = require("lsp-on-attach").on_attach,
+        flags = lsp_flags,
+        capabilities = capabilities,
+      }
+
+      require("lspconfig").stylelint_lsp.setup {
+        on_attach = require("lsp-on-attach").on_attach,
+        flags = lsp_flags,
+        capabilities = capabilities,
+        filetypes = { 'css', 'scss' },
       }
 
       -- luasnip setup
