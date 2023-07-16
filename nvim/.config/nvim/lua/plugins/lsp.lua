@@ -4,9 +4,6 @@ return {
     config = function()
       require("mason").setup()
     end,
-    dependencies = {
-      "jose-elias-alvarez/null-ls.nvim",
-    },
   },
   {
     "williamboman/mason-lspconfig.nvim",
@@ -17,6 +14,7 @@ return {
           "eslint",
           "html",
           "jsonls",
+          "lua_ls",
           "phpactor@2023.04.10",
           "rubocop",
           "stylelint_lsp",
@@ -76,6 +74,26 @@ return {
         capabilities = capabilities,
       }
 
+			require'lspconfig'.lua_ls.setup {
+				settings = {
+					Lua = {
+						runtime = {
+							version = 'LuaJIT',
+						},
+						diagnostics = {
+							globals = {'vim'},
+						},
+						workspace = {
+							library = vim.api.nvim_get_runtime_file("", true),
+              checkThirdParty = false,
+						},
+						telemetry = {
+							enable = false,
+						},
+					},
+				},
+			}
+
       require("lspconfig").phpactor.setup {
         on_attach = require("lsp-on-attach").on_attach,
         flags = lsp_flags,
@@ -88,17 +106,17 @@ return {
         capabilities = capabilities,
       }
 
-      require("lspconfig").tsserver.setup {
-        on_attach = require("lsp-on-attach").on_attach,
-        flags = lsp_flags,
-        capabilities = capabilities,
-      }
-
       require("lspconfig").stylelint_lsp.setup {
         on_attach = require("lsp-on-attach").on_attach,
         flags = lsp_flags,
         capabilities = capabilities,
         filetypes = { 'css', 'scss' },
+      }
+
+      require("lspconfig").tsserver.setup {
+        on_attach = require("lsp-on-attach").on_attach,
+        flags = lsp_flags,
+        capabilities = capabilities,
       }
 
       -- luasnip setup
