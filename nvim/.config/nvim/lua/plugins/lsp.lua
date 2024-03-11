@@ -31,6 +31,8 @@ return {
       "hrsh7th/nvim-cmp",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-nvim-lsp-signature-help",
+      "onsails/lspkind.nvim",
       "L3MON4D3/LuaSnip",
       "saadparwaiz1/cmp_luasnip",
     },
@@ -134,14 +136,24 @@ return {
           completion = cmp.config.window.bordered(),
           documentation = cmp.config.window.bordered(),
         },
+        formatting = {
+          format = require('lspkind').cmp_format({
+            mode = "symbol_text",
+            menu = ({
+              buffer = "[Buffer]",
+              nvim_lsp = "[LSP]",
+              luasnip = "[LuaSnip]",
+            })
+          }),
+        },
         mapping = cmp.mapping.preset.insert({
           ['<C-u>'] = cmp.mapping.scroll_docs(-4), -- Up
           ['<C-d>'] = cmp.mapping.scroll_docs(4), -- Down
           -- C-b (back) C-f (forward) for snippet placeholder navigation.
           ['<C-Space>'] = cmp.mapping.complete(),
-          ['<CR>'] = cmp.mapping.confirm {
+          ['<C-y>'] = cmp.mapping.confirm {
             behavior = cmp.ConfirmBehavior.Replace,
-            select = true,
+            select = false,
           },
           ['<Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
@@ -164,12 +176,23 @@ return {
         }),
         sources = cmp.config.sources({
           { name = 'nvim_lsp' },
+          { name = 'nvim_lsp_signature_help' },
           { name = 'luasnip' },
         }, {
-          { name = 'buffer' },
+          {
+            name = 'buffer',
+            option = {
+              get_bufnrs = function()
+                local bufs = {}
+                for _, win in ipairs(vim.api.nvim_list_wins()) do
+                  bufs[vim.api.nvim_win_get_buf(win)] = true
+                end
+                return vim.tbl_keys(bufs)
+              end
+            }
+          },
         })
       }
-
     end,
   },
 }
