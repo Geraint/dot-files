@@ -11,6 +11,7 @@ return {
       { "<leader>sk", ":FocusSplitUp<CR>",    silent = true },
       { "<leader>sl", ":FocusSplitRight<CR>", silent = true },
       { "<leader>st", ":FocusToggle<CR>",     silent = true },
-    }
+    },
+    event = 'VeryLazy',
   }
 }

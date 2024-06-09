@@ -2,7 +2,9 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     dependencies = {
-      "simrat39/symbols-outline.nvim",
+      'nvim-tree/nvim-web-devicons',
+      'simrat39/symbols-outline.nvim',
+      'arkav/lualine-lsp-progress',
     },
     config = function()
       require("lualine").setup({
@@ -16,6 +18,7 @@ return {
               "filename",
               path = 1,
             },
+            'lsp_progress'
           },
         },
         tabline = {
@@ -28,8 +31,11 @@ return {
         },
         extensions = {
           "fugitive",
+          "lazy",
+          "mason",
           "quickfix",
           "symbols-outline",
+          "trouble",
         },
       })
     end,
