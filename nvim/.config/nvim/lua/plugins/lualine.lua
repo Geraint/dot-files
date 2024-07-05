@@ -3,10 +3,16 @@ return {
     "nvim-lualine/lualine.nvim",
     dependencies = {
       'nvim-tree/nvim-web-devicons',
-      'simrat39/symbols-outline.nvim',
-      'arkav/lualine-lsp-progress',
+      'linrongbin16/lsp-progress.nvim',
     },
     config = function()
+      require('lsp-progress').setup({})
+      -- vim.api.nvim_create_augroup("lualine_augroup", { clear = true })
+      -- vim.api.nvim_create_autocmd("User", {
+      --   group = "lualine_augroup",
+      --   pattern = "LspProgressStatusUpdated",
+      --   callback = require("lualine").refresh,
+      -- })
       require("lualine").setup({
         options = {
           globalstatus = true,
@@ -18,7 +24,9 @@ return {
               "filename",
               path = 1,
             },
-            'lsp_progress'
+            function()
+              return require('lsp-progress').progress()
+            end,
           },
         },
         tabline = {
@@ -34,7 +42,6 @@ return {
           "lazy",
           "mason",
           "quickfix",
-          "symbols-outline",
           "trouble",
         },
       })
