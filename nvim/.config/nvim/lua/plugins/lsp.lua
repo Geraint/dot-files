@@ -15,10 +15,10 @@ return {
           "html",
           "jsonls",
           "lua_ls",
-          "phpactor@2023.04.10",
-          "rubocop",
+          "phpactor@2025.07.25.0",
+          -- "rubocop",
           "stylelint_lsp",
-          "tsserver"
+          "ts_ls"
         },
       })
     end,
@@ -44,39 +44,46 @@ return {
     },
     config = function()
       -- Add additional capabilities supported by nvim-cmp
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      local capabilities = vim.tbl_deep_extend("force",
+        vim.lsp.protocol.make_client_capabilities(),
+        require('cmp_nvim_lsp').default_capabilities()
+      )
 
       local lsp_flags = {
         -- This is the default in Nvim 0.7+
         debounce_text_changes = 150,
       }
 
-      require("lspconfig").cssls.setup {
+      vim.lsp.config('cssls', {
         on_attach = require("lsp-on-attach").on_attach,
         flags = lsp_flags,
         capabilities = capabilities,
-      }
+      })
+      vim.lsp.enable('cssls')
 
-      require("lspconfig").eslint.setup {
+      vim.lsp.config('eslint', {
         on_attach = require("lsp-on-attach").on_attach,
         flags = lsp_flags,
         capabilities = capabilities,
-      }
+      })
+      vim.lsp.enable('eslint')
 
-      require("lspconfig").html.setup {
+      vim.lsp.config('html', {
         on_attach = require("lsp-on-attach").on_attach,
         flags = lsp_flags,
         capabilities = capabilities,
         filetypes = { 'html', 'html.twig' },
-      }
+      })
+      vim.lsp.enable('html')
 
-      require("lspconfig").jsonls.setup {
+      vim.lsp.config('jsonls', {
         on_attach = require("lsp-on-attach").on_attach,
         flags = lsp_flags,
         capabilities = capabilities,
-      }
+      })
+      vim.lsp.enable('jsonls')
 
-			require'lspconfig'.lua_ls.setup {
+			vim.lsp.config('lua_ls', {
 				settings = {
 					Lua = {
 						runtime = {
@@ -94,28 +101,32 @@ return {
 						},
 					},
 				},
-			}
+			})
+      vim.lsp.enable('lua_ls')
 
-      require("lspconfig").phpactor.setup {
+      vim.lsp.config('phpactor', {
         on_attach = require("lsp-on-attach").on_attach,
         flags = lsp_flags,
         capabilities = capabilities,
-      }
+      })
+      vim.lsp.enable('phpactor')
 
-      require("lspconfig").rubocop.setup {
-        on_attach = require("lsp-on-attach").on_attach,
-        flags = lsp_flags,
-        capabilities = capabilities,
-      }
+      -- vim.lsp.config('rubocop', {
+      --   on_attach = require("lsp-on-attach").on_attach,
+      --   flags = lsp_flags,
+      --   capabilities = capabilities,
+      -- })
+      -- vim.lsp.enable('rubocop')
 
-      require("lspconfig").stylelint_lsp.setup {
+      vim.lsp.config('stylelint_lsp', {
         on_attach = require("lsp-on-attach").on_attach,
         flags = lsp_flags,
         capabilities = capabilities,
         filetypes = { 'css', 'scss' },
-      }
+      })
+      vim.lsp.enable('stylelint_lsp')
 
-      require("lspconfig").tsserver.setup {
+      require("lspconfig").ts_ls.setup {
         on_attach = require("lsp-on-attach").on_attach,
         flags = lsp_flags,
         capabilities = capabilities,
