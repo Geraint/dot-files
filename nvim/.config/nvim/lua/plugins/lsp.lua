@@ -42,6 +42,7 @@ return {
       { "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", noremap = true, silent = true },
       { "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", noremap = true, silent = true },
     },
+    lazy = false,
     config = function()
       -- Add additional capabilities supported by nvim-cmp
       local capabilities = vim.tbl_deep_extend("force",
