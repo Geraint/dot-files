@@ -127,11 +127,12 @@ return {
       })
       vim.lsp.enable('stylelint_lsp')
 
-      require("lspconfig").ts_ls.setup {
+      vim.lsp.config('ts_ls', {
         on_attach = require("lsp-on-attach").on_attach,
         flags = lsp_flags,
         capabilities = capabilities,
-      }
+      })
+      vim.lsp.enable('ts_ls')
 
       -- luasnip setup
       local luasnip = require 'luasnip'
