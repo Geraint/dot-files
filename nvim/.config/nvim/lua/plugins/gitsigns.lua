@@ -6,6 +6,25 @@ return {
     },
     config = function()
       require("gitsigns").setup({
+        signs = {
+          delete       = { show_count = true },
+          topdelete    = { show_count = true },
+          changedelete = { show_count = true },
+        },
+        count_chars = {
+          [1]   = '₁',
+          [2]   = '₂',
+          [3]   = '₃',
+          [4]   = '₄',
+          [5]   = '₅',
+          [6]   = '₆',
+          [7]   = '₇',
+          [8]   = '₈',
+          [9]   = '₉',
+          ['+'] = '₊',
+        },
+        numhl = true,
+        word_diff = true,
         on_attach = function(bufnr)
           local gitsigns = require('gitsigns')
 
