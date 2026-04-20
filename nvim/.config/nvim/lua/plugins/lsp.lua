@@ -1,12 +1,12 @@
 return {
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     config = function()
       require("mason").setup()
     end,
   },
   {
-    "williamboman/mason-lspconfig.nvim",
+    "mason-org/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = {
@@ -17,7 +17,7 @@ return {
           "lua_ls",
           "phpactor@2025.07.25.0",
           -- "rubocop",
-          "stylelint_lsp",
+          -- "stylelint_lsp",
           "ts_ls"
         },
       })
@@ -27,7 +27,7 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
       "mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
+      "mason-org/mason-lspconfig.nvim",
       "hrsh7th/nvim-cmp",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-nvim-lsp",
@@ -38,8 +38,8 @@ return {
     },
     keys = {
       { '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', noremap = true },
-      { "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", noremap = true, silent = true },
-      { "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", noremap = true, silent = true },
+      { "[d", "<cmd>lua vim.diagnostic.jump({count=-1})<CR>", noremap = true, silent = true },
+      { "]d", "<cmd>lua vim.diagnostic.jump({count=1})<CR>", noremap = true, silent = true },
       { "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", noremap = true, silent = true },
     },
     lazy = false,
@@ -124,6 +124,12 @@ return {
         flags = lsp_flags,
         capabilities = capabilities,
         filetypes = { 'css', 'scss' },
+        settings = {
+          stylelint = {
+            snippet = { 'css', 'postcss', 'scss' },
+            validate = { 'css', 'postcss', 'scss' },
+          },
+        },
       })
       vim.lsp.enable('stylelint_lsp')
 
