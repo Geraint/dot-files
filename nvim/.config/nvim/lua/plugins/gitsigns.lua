@@ -24,7 +24,6 @@ return {
           ['+'] = '₊',
         },
         numhl = true,
-        word_diff = true,
         on_attach = function(bufnr)
           local gitsigns = require('gitsigns')
 
